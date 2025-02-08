@@ -1,0 +1,14 @@
+.joiner{
+    display: flex;
+}
+.Left{
+    flex:1;
+    padding:10px;
+}
+.articles{
+    background-color: blanchedalmond;
+}
+.right{
+    flex:1;
+    padding:10px;  background-color: #f0f0f0;
+}
