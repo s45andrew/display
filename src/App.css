@@ -6,7 +6,19 @@
   height: 40vmin;
   pointer-events: none;
 }
+.jobs{
+  display: flex;
+  padding:20px;
+}
+.listings{
+  flex:1;
+  padding:10px;
+}
 
+.details{
+  flex:1;
+  padding:10px;  background-color: #454444;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

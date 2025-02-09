@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route,Routes,Link } from 'react-router-dom';
-import Jobs from './comp/jobs';
+import JobList from './comp/jobs';
 import Football from './comp/football';
 import Stocks from './comp/stocks';
 import Articles from'./comp/articles';
@@ -27,7 +27,7 @@ const App = () => {
           </ul>
         </nav>
         <Routes>
-          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs" element={<JobList />} />
         
           <Route path="/football" element={<Football />} />
           
