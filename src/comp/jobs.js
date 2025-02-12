@@ -1,38 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useContext, useState } from 'react';
+import { JobContext } from './jobContext';
+import S3DataFetcher from './S3DataFetcher';
 
 const JobList = () => {
-  const [jobs, setJobs] = useState([]);
+  const { jobs, loading } = useContext(JobContext);
   const [selectedJob, setSelectedJob] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await axios.get('https://ofssrhemw1.execute-api.eu-west-2.amazonaws.com/dev/parse');
-        setJobs(response.data.jobList);
-        setLoading(false); // Set loading to false after data is fetched
-      } catch (error) {
-        console.error('Error fetching jobs:', error);
-        setLoading(false); // Set loading to false in case of an error
-      }
-    };
-
-    fetchJobs();
-  }, []);
 
   if (loading) {
-    return <div  className='stocks'>Loading job listings...</div>; // Display loading message while fetching data
+    return <div>Loading job listings...</div>; // Display loading message while fetching data
   }
 
   return (
-    <div className='jobs'>
-      <h1>Job Listings<br />
-      <button onClick={() => setSelectedJob(null)}>Back to Job Listings</button>
-      </h1>
-       
+    <div>
+      <h1>Job Listings</h1>
+      <S3DataFetcher />
       {selectedJob ? (
-        <div className='listings'>
+        <div>
           <h2>{selectedJob.job}</h2>
           <p>{selectedJob.details}</p>
           <button onClick={() => setSelectedJob(null)}>Back to Job Listings</button>
