@@ -1,0 +1,117 @@
+.stocks{
+    
+    background-color: bisque;
+     padding:2px;margin:22px;
+  }
+
+  
+  .flex-container {
+    display: flex;
+}
+.flex-child {
+    flex: 1;
+    border: 2px solid yellow;
+    padding :5px; color :rgb(29, 28, 28);
+}  
+.flex-child:first-child {
+    margin-right: 5px;
+    border: 2px solid rgb(60, 60, 56);
+    padding-right: 3px;
+    color :black;
+    height: 50vh; 
+} 
+
+
+  
+  .myTwitter {
+    
+    margin: 3px;
+    padding: 7px;
+    background-color: aliceblue;
+    border-width: 3px;
+    border-color: rgb(246, 246, 249);
+    color: blue;  
+     } 
+  
+  
+     .button-container {
+        display: flex;
+        justify-content: space-around; /* Space buttons with a fixed gap */
+        gap: 5px; /* Reduced gap between buttons */
+      }
+      
+      .button-54 {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 3px solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        -webkit-user-select: none;
+        user-select: none;
+        
+        touch-action: manipulation;
+      }
+      
+      /* Larger screen sizes */
+      @media (min-width: 768px) {
+        .button-54 {
+          font-size: 20px; /* Increase font size */
+          padding: 0.5em 1em; /* Increase padding */
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .button-54 {
+          font-size: 24px; /* Further increase font size */
+          padding: 0.75em 1.5em; /* Further increase padding */
+        }
+      }
+      
+      /* Different colors using nth-child */
+      .button-54:nth-child(1) {
+        background-color: #ffadad;
+      }
+      
+      .button-54:nth-child(2) {
+        background-color: #ffd6a5;
+      }
+      
+      .button-54:nth-child(3) {
+        background-color: #fdffb6;
+      }
+      
+      .button-54:nth-child(4) {
+        background-color: #caffbf;
+      }
+      
+      .button-54:nth-child(5) {
+        background-color: #9bf6ff;
+      }
+      
+      /* Hover effects for different buttons */
+      .button-54:nth-child(1):hover {
+        background-color: #ff4c4c; /* More noticeable change */
+      }
+      
+      .button-54:nth-child(2):hover {
+        background-color: #ffa34d; /* More noticeable change */
+      }
+      
+      .button-54:nth-child(3):hover {
+        background-color: #ffff4d; /* More noticeable change */
+      }
+      
+      .button-54:nth-child(4):hover {
+        background-color: #70ff70; /* More noticeable change */
+      }
+      
+      .button-54:nth-child(5):hover {
+        background-color: #4dcfff; /* More noticeable change */
+      }
+      

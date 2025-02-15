@@ -4,7 +4,7 @@ import { JobProvider } from './comp/jobContext';
 import { SportProvider } from './comp/sportContext';
 import { NewsProvider } from './comp/newsContext';
 import JobList from './comp/jobs';
-import Football from './comp/football';
+import SportsFetcher from './comp/sportsFetcher';
 import Stocks from './comp/stocks';
 import Articles from './comp/articles';
 
@@ -33,7 +33,7 @@ const App = () => {
               </nav>
               <Routes>
                 <Route path="/jobs" element={<JobList />} />
-                <Route path="/football" element={<Football />} />
+                <Route path="/football" element={<SportsFetcher />} />
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/" element={<Stocks />} />
               </Routes>
