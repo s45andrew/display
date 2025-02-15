@@ -1,23 +1,23 @@
-// src/components/Football.js
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../App.css';
 
 const Football = () => {
-  const apiUrl = 'https://8sjips7i31.execute-api.eu-west-2.amazonaws.com/dev/hello';
+  const s3Url = 'https://myfrantic.s3.eu-west-2.amazonaws.com/local-football-data.json'; // S3 object URL
   const [message, setMessage] = useState('');
 
   async function fetchData() {
     try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) {
-        throw new Error('HTTP error!');
+      const response = await axios.get(s3Url);
+      if (response.data && Array.isArray(response.data)) {
+        // Assuming we want to display the first article's title as the message
+        const firstArticle = response.data[0];
+        setMessage(firstArticle.title); // Use the correct key for the article title
+      } else {
+        throw new Error('Parsed data is not an array or is empty');
       }
-      const data = await response.json();
-      const parsedMessage = JSON.parse(data.body);
-      setMessage(parsedMessage);
-      console.log(parsedMessage);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching data from S3:', error);
     }
   }
 

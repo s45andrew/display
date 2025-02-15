@@ -8,7 +8,7 @@ const SportsFetcher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/scrape');
+        const response = await axios.get('https://myfrantic.s3.eu-west-2.amazonaws.com/local-football-data.json');
         setArticles(response.data);
         setLoading(false);
       } catch (error) {

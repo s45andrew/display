@@ -10,7 +10,7 @@ export const NewsProvider = ({ children }) => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('https://ofssrhemw1.execute-api.eu-west-2.amazonaws.com/dev/parse');
+        const response = await axios.get('https://myfrantic.s3.eu-west-2.amazonaws.com/local-news-data.json');
         setNews(response.data.newsList);
         setLoading(false);
       } catch (error) {

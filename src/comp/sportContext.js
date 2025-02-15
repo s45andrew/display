@@ -10,7 +10,7 @@ export const SportProvider = ({ children }) => {
   useEffect(() => {
     const fetchsport = async () => {
       try {
-        const response = await axios.get('https://ofssrhemw1.execute-api.eu-west-2.amazonaws.com/dev/parse');
+        const response = await axios.get('https://myfrantic.s3.eu-west-2.amazonaws.com/local-football-data.json');
         setSport(response.data.SportList);
         setLoading(false);
       } catch (error) {
