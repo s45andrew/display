@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import { JobProvider } from './comp/jobContext';
 import { SportProvider } from './comp/sportContext';
 import { NewsProvider } from './comp/newsContext';
@@ -7,6 +8,8 @@ import JobList from './comp/jobs';
 import SportsFetcher from './comp/sportsFetcher';
 import Stocks from './comp/stocks';
 import Articles from './comp/articles';
+import NFL from './comp/nfl';
+import './App.css'; // Import the CSS file
 
 const App = () => {
   return (
@@ -16,25 +19,32 @@ const App = () => {
           <JobProvider>
             <div>
               <nav>
-                <ul>
-                  <li>
-                    <Link to="/">Stocks</Link>
-                  </li>
-                  <li>
-                    <Link to="/football">Football</Link>
-                  </li>
-                  <li>
-                    <Link to="/jobs">Jobs</Link>
-                  </li>
-                  <li>
-                    <Link to="/articles">Articles</Link>
-                  </li>
-                </ul>
+                <div className="nav-buttons">
+                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
+                 <button>FrAntIc StaTs</button>
+                 </NavLink>
+                  <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <button>Stocks</button>
+                  </NavLink>
+                  <NavLink to="/football" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <button>Football</button>
+                  </NavLink>
+                  <NavLink to="/jobs" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <button>Jobs</button>
+                  </NavLink>
+                  <NavLink to="/articles" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <button>Articles</button>
+                  </NavLink>
+                  <NavLink to="/nfl" className={({ isActive }) => isActive ? 'active' : ''}>
+                    <button>NFL</button>
+                  </NavLink>
+                </div>
               </nav>
               <Routes>
                 <Route path="/jobs" element={<JobList />} />
                 <Route path="/football" element={<SportsFetcher />} />
                 <Route path="/articles" element={<Articles />} />
+                <Route path="/nfl" element={<NFL />} />
                 <Route path="/" element={<Stocks />} />
               </Routes>
             </div>

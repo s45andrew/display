@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -49,7 +50,8 @@
 
 .joiner {
   display: flex;          /* Use Flexbox to arrange items */
-  flex-direction: row;    /* Display divs side by side */
+  flex-direction: row; 
+  justify-content:space-between;   /* Display divs side by side */
 }
 .flex-container {
   display: flex;
@@ -89,6 +91,34 @@
 .jobs{
   background-color: rgb(208, 243, 177);
 }
+.nav-buttons {
+  display: flex;
+  gap: 0px;
+  justify-content:center
+}
+
+.nav-buttons button {
+  padding: 3px 5px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3;
+  color:gold;
+}
+
+.nav-buttons button:focus {
+  outline: none;
+}
+.nav-buttons .active button {
+  background-color: #0056b3; color:gold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
