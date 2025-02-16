@@ -4,7 +4,7 @@ import '../App.css';
 
 const S3DataFetcher = () => {
   const [data, setData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+ 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
