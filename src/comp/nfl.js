@@ -3,7 +3,7 @@ import axios from 'axios';
 import './nfl.css';
 
 const NFL = () => {
-  const s3Url = 'https://myfrantic.s3.eu-west-2.amazonaws.com/nfl-data.json'; // S3 object URL
+  const s3Url =  process.env.REACT_APP_NFL_DATA_URL;       
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState('');
 

@@ -11,7 +11,7 @@ const S3DataFetcher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'https://myfrantic.s3.eu-west-2.amazonaws.com/job-data.json'; // Replace with your S3 object URL
+        const url =process.env.REACT_APP_JOB_DATA_URL;
         const response = await axios.get(url);
         setData(response.data);
         setLoading(false);

@@ -11,7 +11,9 @@ const SportsFetcher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://myfrantic.s3.eu-west-2.amazonaws.com/local-football-data.json');
+        const URL=process.env.REACT_APP_FOOTBALL_DATA_URL;
+       
+        const response = await axios.get(URL);
         setArticles(response.data);
         setLoading(false);
       } catch (error) {

@@ -14,7 +14,10 @@ const CombinedComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'https://myfrantic.s3.eu-west-2.amazonaws.com/job-data.json'; // Replace with your S3 object URL
+        const url = process.env.REACT_APP_JOB_DATA_URL;
+        if (!url) {
+          throw new Error('URL is not defined. Check your .env file.');
+        }
         const response = await axios.get(url);
         if (Array.isArray(response.data)) {
           setData(response.data);
@@ -59,11 +62,10 @@ const CombinedComponent = () => {
           </div>
         </div>
       </div>
-      
       <div className="news-listings" style={{ padding: '20px' }}>
         <div className="article-container" style={{ position: 'relative' }}>
           <div style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px', position: 'relative' }}>
-         
+           
             <h2>{data[currentIndex].article}</h2>
             <p>{data[currentIndex].details}</p>
           </div>

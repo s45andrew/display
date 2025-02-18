@@ -10,13 +10,10 @@ export const JobProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const params = new URLSearchParams({
-          Bucket: 'myfrantic', // Replace with your bucket name
-          Key: 'job-data.json', // Replace with your object key
-        });
-
-        const url = `https://myfrantic.s3.eu-west-2.amazonaws.com/${params}`;
-
+        const url = process.env.REACT_APP_JOB_DATA_URL; // Using .env file for the URL
+        if (!url) {
+          throw new Error('URL is not defined. Check your .env file.');
+        }
         const response = await axios.get(url);
         setJobs(response.data);
         setLoading(false);

@@ -11,8 +11,8 @@ const S3DataFetcher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'https://myfrantic.s3.eu-west-2.amazonaws.com/local-news-data.json'; // Replace with your S3 object URL
-        const response = await axios.get(url);
+        const url = process.env.REACT_APP_LOCAL_NEWS_DATA_URL;
+         const response = await axios.get(url);
         if (Array.isArray(response.data)) {
           setData(response.data);
         } else {
