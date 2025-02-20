@@ -39,79 +39,59 @@
         justify-content: space-around; /* Space buttons with a fixed gap */
         gap: 5px; /* Reduced gap between buttons */
       }
-      
-      .button-54 {
-        font-family: "Open Sans", sans-serif;
-        font-size: 16px;
-        letter-spacing: 2px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #000;
-        cursor: pointer;
-        border: 3px solid;
-        padding: 0.25em 0.5em;
-        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-        position: relative;
-        -webkit-user-select: none;
-        user-select: none;
-        
-        touch-action: manipulation;
+      .button-54.ftse {
+        background-color: #ff9999; /* light red */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       
-      /* Larger screen sizes */
-      @media (min-width: 768px) {
-        .button-54 {
-          font-size: 20px; /* Increase font size */
-          padding: 0.5em 1em; /* Increase padding */
-        }
+      .button-54.tesla {
+        background-color: #99ccff; /* light blue */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       
-      @media (min-width: 1024px) {
-        .button-54 {
-          font-size: 24px; /* Further increase font size */
-          padding: 0.75em 1.5em; /* Further increase padding */
-        }
+      .button-54.chipotle {
+        background-color: #ffcc99; /* light orange */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       
-      /* Different colors using nth-child */
-      .button-54:nth-child(1) {
-        background-color: #ffadad;
+      .button-54.bitcoin {
+        background-color: #ffccff; /* light pink */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       
-      .button-54:nth-child(2) {
-        background-color: #ffd6a5;
+      .button-54.apple {
+        background-color: #ccff99; /* light green */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       
-      .button-54:nth-child(3) {
-        background-color: #fdffb6;
+      .button-54.microsoft {
+        background-color: #ffff99; /* light yellow */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       
-      .button-54:nth-child(4) {
-        background-color: #caffbf;
-      }
-      
-      .button-54:nth-child(5) {
-        background-color: #9bf6ff;
-      }
-      
-      /* Hover effects for different buttons */
-      .button-54:nth-child(1):hover {
-        background-color: #ff4c4c; /* More noticeable change */
-      }
-      
-      .button-54:nth-child(2):hover {
-        background-color: #ffa34d; /* More noticeable change */
-      }
-      
-      .button-54:nth-child(3):hover {
-        background-color: #ffff4d; /* More noticeable change */
-      }
-      
-      .button-54:nth-child(4):hover {
-        background-color: #70ff70; /* More noticeable change */
-      }
-      
-      .button-54:nth-child(5):hover {
-        background-color: #4dcfff; /* More noticeable change */
+      .button-54.nvidia {
+        background-color: #cccccc; /* light grey */
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
       }
       

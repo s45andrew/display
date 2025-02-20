@@ -10,7 +10,8 @@ import Stocks from './comp/stocks';
 import Articles from './comp/articles';
 import NFL from './comp/nfl';
 import './App.css'; // Import the CSS file
-
+import LoginPage
+ from './comp/txtfiles/myStocks';
 const App = () => {
   return (
     <Router>
@@ -23,7 +24,7 @@ const App = () => {
                 <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
                  <button>FrAntIc StaTs</button>
                  </NavLink>
-                  <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="/stocks" className={({ isActive }) => isActive ? 'active' : ''}>
                     <button>Stocks</button>
                   </NavLink>
                   <NavLink to="/football" className={({ isActive }) => isActive ? 'active' : ''}>
@@ -45,7 +46,9 @@ const App = () => {
                 <Route path="/football" element={<SportsFetcher />} />
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/nfl" element={<NFL />} />
-                <Route path="/" element={<Stocks />} />
+                <Route path="/stocks" element={<Stocks />} />
+                <Route path="/" element ={<LoginPage />} />
+               
               </Routes>
             </div>
           </JobProvider>

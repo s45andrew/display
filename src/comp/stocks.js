@@ -1,6 +1,7 @@
 // src/components/About.js
 import React from 'react';
 import '../comp/stocks.css';
+import LineGraph from './txtfiles/lineChart'
 
 const Stock = () => {
   return  (
@@ -9,14 +10,9 @@ const Stock = () => {
       <div className="flex-container">
         
         <div className="flex-child magenta">
-          <div className="button-container">
-            <button className="button-54" role="button">b1</button>
-            <button className="button-54" role="button">b2</button>
-            <button className="button-54" role="button">b3</button>
-            <button className="button-54" role="button">b4</button>
-            <button className="button-54" role="button">b5</button>
-          </div>
-          the left side
+        
+          
+          <LineGraph />
         </div>
         
         <div className="flex-child green">
@@ -26,7 +22,7 @@ const Stock = () => {
         
       </div>
       <div className='jooiner'>
-        <div className='other'>the left side</div>
+        <div className='other'><br /><br /><br ></br></div>
         <div className='right'>
           twitter news<br />
           <div className='myTwitter'><br />br twitter<br /></div>
