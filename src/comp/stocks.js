@@ -22,7 +22,7 @@ const Stock = () => {
         
       </div>
       <div className='jooiner'>
-        <div className='other'><br /><br /><br ></br></div>
+        <div className='other'><br /><br /><br ></br><br /><br ></br></div>
         <div className='right'>
           twitter news<br />
           <div className='myTwitter'><br />br twitter<br /></div>

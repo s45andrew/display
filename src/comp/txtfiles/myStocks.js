@@ -117,77 +117,14 @@ function LoginPage() {
         </div>
       </header>
       <div className="StockStuff">
-        <p>o77</p>
+        
         <div className='gratit'>
           <h2 className='graname'>{graphtitle} {price}</h2><h3>{range}</h3>
           <h2 className='graname' style={{ color }}>{day}</h2>
         </div>
         <div className="tesla">
-          <div className='barray'>
-            <button
-              className={`bar ${baractive === 'tesla' ? 'active' : ''}`}
-              onClick={() => {
-                movement(tesla, range, 'Tesla');
-                handleBaractive('tesla');
-              }}
-            >
-              Tesla
-            </button>
-            <button
-              className={`bar ${baractive === 'apple' ? 'active' : ''}`}
-              onClick={() => {
-                movement(apple, range, 'Apple');
-                handleBaractive('apple');
-              }}
-            >
-              Apple
-            </button>
-            <button
-              className={`bar ${baractive === 'nvidia' ? 'active' : ''}`}
-              onClick={() => {
-                movement(nvidia, range, 'Nvidia');
-                handleBaractive('nvidia');
-              }}
-            >
-              Nvidia
-            </button>
-            <button
-              className={`bar ${baractive === 'amazon' ? 'active' : ''}`}
-              onClick={() => {
-                movement(amazon, range, 'Amazon');
-                handleBaractive('amazon');
-              }}
-            >
-              Amazon
-            </button>
-            <button
-              className={`bar ${baractive === 'cmg' ? 'active' : ''}`}
-              onClick={() => {
-                movement(cmg, range, 'CmG');
-                handleBaractive('cmg');
-              }}
-            >
-              Chipotle
-            </button>
-            <button
-              className={`bar ${baractive === 'bitcoin' ? 'active' : ''}`}
-              onClick={() => {
-                movement(bitcoin, range, 'bitcoin');
-                handleBaractive('bitcoin');
-              }}
-            >
-              Bitcoin
-            </button>
-            <button
-              className={`bar ${baractive === 'msoft' ? 'active' : ''}`}
-              onClick={() => {
-                movement(msoft, range, 'MicroSoft');
-                handleBaractive('msoft');
-              }}
-            >
-              Microsoft
-            </button>
-          </div>
+          
+          
           <div className='theGraph'>
             {loading ? (
               <p>Loading data...</p>
@@ -195,13 +132,7 @@ function LoginPage() {
               <LineChart data={graph} />
             )}
           </div>
-          <div className='times'>
-            <button className='bar' onClick={() => movement(currentSource, 2)}>day</button>
-            <button className='bar' onClick={() => movement(currentSource, 5)}>week</button>
-            <button className='bar' onClick={() => movement(currentSource, 9)}>month</button>
-            <button className='bar' onClick={() => movement(currentSource, currentSource.length)}>year</button>
-            <button className='bar' onClick={() => movement(currentSource, currentSource.length)}>max</button>
-          </div>
+        
         </div>
       </div>
     </div>
