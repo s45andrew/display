@@ -5,6 +5,7 @@ import LoadApp from '../../loader.js'; // Adjust the path as needed
 
 const LineChart = () => {
   const [xAxisLabels, setXAxisLabels] = useState([]);
+  const [stName,setStName] = useState('FTSE')
   const [dataPoints, setDataPoints] = useState([]);
   const [tempPoints, setTempPoints] = useState([]);
   const [tempX, setTempX] = useState([]);
@@ -32,18 +33,21 @@ const LineChart = () => {
   }, [loadedData, currentDataset]);
 
   // Calculate the difference between the first two data points
-  const difference = dataPoints.length > 1 ? (dataPoints[0] - dataPoints[1]).toFixed(2) : "0.00";
+  const price = dataPoints.length > 1 ? (dataPoints[dataPoints.length - 1]).toFixed(2) : "0.00";
+  const difference = dataPoints.length > 1 ? (dataPoints[dataPoints.length - 1] - dataPoints[dataPoints.length - 2]).toFixed(2) : "0.00";
   // Define the style based on the difference
   const titleStyle = {
-    color: difference > 0 ? 'green' : 'red',
-  };
+    color: parseFloat(difference) > 0 ? 'green' : 'red',
+};
+ 
 
   const duration = (spread) => {
+    if(spread===1000){spread=xAxisLabels.length-1}
     if (xAxisLabels.length < spread) {
-      spread = xAxisLabels.length;
+      spread = xAxisLabels.length-1;
     }
-    setTempX(xAxisLabels.slice(0, spread));
-    setTempPoints(dataPoints.slice(0, spread));
+    setTempX(xAxisLabels.slice( -spread));
+    setTempPoints(dataPoints.slice(-spread));
   };
 
   // Calculate the y-axis range
@@ -90,6 +94,7 @@ const LineChart = () => {
 
   // Handle button click to switch datasets
   const handleClick = (index, label, color) => {
+    setStName(label)
     setCurrentDataset(index);
   };
 
@@ -99,20 +104,21 @@ const LineChart = () => {
       <LoadApp onDataLoaded={setLoadedData} />
       <div className="button-container">
         <button className="button-54 ftse" onClick={() => handleClick(0, 'FTSE', '#ff9999')}>FTSE</button>
-        <button className="button-54 tesla" onClick={() => handleClick(6, 'Tesla', '#99ccff')}>Tesla</button>
-        <button className="button-54 chipotle" onClick={() => handleClick(4, 'Chipotle', '#ffcc99')}>Chipotle</button>
+        <button className="button-54 tesla" onClick={() => handleClick(1, 'Tesla', '#99ccff')}>Tesla</button>
+        <button className="button-54 chipotle" onClick={() => handleClick(2, 'Chipotle', '#ffcc99')}>Chipotle</button>
         <button className="button-54 bitcoin" onClick={() => handleClick(3, 'Bitcoin', '#ffccff')}>Bitcoin</button>
-        <button className="button-54 apple" onClick={() => handleClick(1, 'Apple', '#ccff99')}>Apple</button>
-        <button className="button-54 microsoft" onClick={() => handleClick(2, 'Microsoft', '#ffff99')}>Microsoft</button>
-        <button className="button-54 nvidia" onClick={() => handleClick(5, 'Nvidia', '#cccccc')}>Nvidia</button>
+        <button className="button-54 apple" onClick={() => handleClick(4, 'Apple', '#ccff99')}>Apple</button>
+        <button className="button-54 microsoft" onClick={() => handleClick(5, 'Microsoft', '#ffff99')}>Microsoft</button>
+        <button className="button-54 nvidia" onClick={() => handleClick(6, 'Nvidia', '#cccccc')}>Nvidia</button>
       </div>
-       <h2 style={titleStyle}>Basic Line Chart $ {difference}</h2>
+       <h2>{stName} {price}   .   .   <span style={titleStyle}> $ {difference}  </span></h2>
       <Line data={chartData} options={chartOptions} />
       <div className="button-container">
         <button onClick={() => duration(2)}>a day</button>
         <button onClick={() => duration(5)}>week</button>
         <button onClick={() => duration(20)}>month</button>
         <button onClick={() => duration(240)}>year</button>
+        <button onClick={() => duration(1000)}> Max </button>
       </div>
     </div>
   );
