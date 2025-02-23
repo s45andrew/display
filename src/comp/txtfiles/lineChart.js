@@ -5,12 +5,14 @@ import LoadApp from '../../loader.js'; // Adjust the path as needed
 
 const LineChart = () => {
   const [xAxisLabels, setXAxisLabels] = useState([]);
-  const [stName,setStName] = useState('FTSE')
+  const [stName, setStName] = useState('FTSE');
   const [dataPoints, setDataPoints] = useState([]);
   const [tempPoints, setTempPoints] = useState([]);
   const [tempX, setTempX] = useState([]);
   const [loadedData, setLoadedData] = useState([]);
   const [currentDataset, setCurrentDataset] = useState(0); // Track the current dataset
+  const [lineColor, setLineColor] = useState('rgba(75,192,192,1)'); // Default color
+  const defaultSpread = 20; // Default duration for a month
 
   useEffect(() => {
     if (loadedData.length > 0) {
@@ -27,8 +29,10 @@ const LineChart = () => {
 
       setXAxisLabels(newLabels);
       setDataPoints(newData);
-      setTempX(newLabels);
-      setTempPoints(newData);
+
+      // Initialize with default range
+      setTempX(newLabels.slice(-defaultSpread));
+      setTempPoints(newData.slice(-defaultSpread));
     }
   }, [loadedData, currentDataset]);
 
@@ -38,21 +42,22 @@ const LineChart = () => {
   // Define the style based on the difference
   const titleStyle = {
     color: parseFloat(difference) > 0 ? 'green' : 'red',
-};
- 
+  };
 
   const duration = (spread) => {
-    if(spread===1000){spread=xAxisLabels.length-1}
-    if (xAxisLabels.length < spread) {
-      spread = xAxisLabels.length-1;
+    if (spread === 1000) {
+      spread = xAxisLabels.length - 1;
     }
-    setTempX(xAxisLabels.slice( -spread));
+    if (xAxisLabels.length < spread) {
+      spread = xAxisLabels.length - 1;
+    }
+    setTempX(xAxisLabels.slice(-spread));
     setTempPoints(dataPoints.slice(-spread));
   };
 
-  // Calculate the y-axis range
-  const yMin = Math.min(...dataPoints) * 0.9;
-  const yMax = Math.max(...dataPoints) * 1.1;
+  // Calculate the y-axis range based on the selected period
+  const yMin = Math.min(...tempPoints) * 0.9;
+  const yMax = Math.max(...tempPoints) * 1.1;
 
   // Use useMemo for optimized chart data
   const chartData = useMemo(
@@ -60,16 +65,16 @@ const LineChart = () => {
       labels: tempX,
       datasets: [
         {
-          label: 'Stock Prices',
+          label: `${stName} Stock Prices`,
           data: tempPoints,
           fill: false,
           backgroundColor: 'rgba(75,192,192,0.2)',
-          borderColor: 'rgba(75,192,192,1)',
+          borderColor: lineColor, // Use the current line color
           tension: 0.1,
         },
       ],
     }),
-    [tempX, tempPoints]
+    [tempX, tempPoints, lineColor]
   );
 
   // Define the chart options
@@ -92,10 +97,11 @@ const LineChart = () => {
     },
   };
 
-  // Handle button click to switch datasets
+  // Handle button click to switch datasets and update line color
   const handleClick = (index, label, color) => {
-    setStName(label)
+    setStName(label);
     setCurrentDataset(index);
+    setLineColor(color); // Update the line color
   };
 
   return (
@@ -103,22 +109,22 @@ const LineChart = () => {
       {/* LoadApp component to load data */}
       <LoadApp onDataLoaded={setLoadedData} />
       <div className="button-container">
-        <button className="button-54 ftse" onClick={() => handleClick(0, 'FTSE', '#ff9999')}>FTSE</button>
-        <button className="button-54 tesla" onClick={() => handleClick(1, 'Tesla', '#99ccff')}>Tesla</button>
-        <button className="button-54 chipotle" onClick={() => handleClick(2, 'Chipotle', '#ffcc99')}>Chipotle</button>
-        <button className="button-54 bitcoin" onClick={() => handleClick(3, 'Bitcoin', '#ffccff')}>Bitcoin</button>
-        <button className="button-54 apple" onClick={() => handleClick(4, 'Apple', '#ccff99')}>Apple</button>
-        <button className="button-54 microsoft" onClick={() => handleClick(5, 'Microsoft', '#ffff99')}>Microsoft</button>
-        <button className="button-54 nvidia" onClick={() => handleClick(6, 'Nvidia', '#cccccc')}>Nvidia</button>
+        <button className="button-54 ftse" onClick={() => handleClick(0, 'FTSE', 'rgba(255,153,153,1)')}>FTSE</button>
+        <button className="button-54 tesla" onClick={() => handleClick(1, 'Tesla', 'rgba(153,204,255,1)')}>Tesla</button>
+        <button className="button-54 chipotle" onClick={() => handleClick(2, 'Chipotle', 'rgba(255,204,153,1)')}>Chipotle</button>
+        <button className="button-54 bitcoin" onClick={() => handleClick(3, 'Bitcoin', 'rgba(255,204,255,1)')}>Bitcoin</button>
+        <button className="button-54 apple" onClick={() => handleClick(4, 'Apple', 'rgba(204,255,153,1)')}>Apple</button>
+        <button className="button-54 microsoft" onClick={() => handleClick(5, 'Microsoft', 'rgba(255,255,153,1)')}>Microsoft</button>
+        <button className="button-54 nvidia" onClick={() => handleClick(6, 'Nvidia', 'rgba(204,204,204,1)')}>Nvidia</button>
       </div>
-       <h2>{stName} {price}   .   .   <span style={titleStyle}> $ {difference}  </span></h2>
+      <h2>{stName} {price} . . <span style={titleStyle}>${difference}</span></h2>
       <Line data={chartData} options={chartOptions} />
       <div className="button-container">
         <button onClick={() => duration(2)}>a day</button>
         <button onClick={() => duration(5)}>week</button>
         <button onClick={() => duration(20)}>month</button>
         <button onClick={() => duration(240)}>year</button>
-        <button onClick={() => duration(1000)}> Max </button>
+        <button onClick={() => duration(1000)}>Max</button>
       </div>
     </div>
   );

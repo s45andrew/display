@@ -50,7 +50,8 @@
       .button-54.tesla {
         background-color: #99ccff; /* light blue */
         border: none;
-        color: white;
+        color: white; font-weight: bold;
+        
         padding: 10px;
         font-size: 14px;
       }
@@ -58,7 +59,7 @@
       .button-54.chipotle {
         background-color: #ffcc99; /* light orange */
         border: none;
-        color: white;
+        color: rgb(38, 33, 33);font-weight: bold;
         padding: 10px;
         font-size: 14px;
       }
@@ -66,7 +67,7 @@
       .button-54.bitcoin {
         background-color: #ffccff; /* light pink */
         border: none;
-        color: white;
+        color: rgb(18, 15, 3);
         padding: 10px;
         font-size: 14px;
       }
@@ -74,23 +75,23 @@
       .button-54.apple {
         background-color: #ccff99; /* light green */
         border: none;
-        color: white;
+        color: rgb(38, 33, 33);font-weight: bold;
         padding: 10px;
         font-size: 14px;
       }
       
       .button-54.microsoft {
-        background-color: #ffff99; /* light yellow */
+        background-color: #5f1057; /* light yellow */
         border: none;
-        color: white;
-        padding: 10px;
+        color: rgb(222, 217, 217);font-weight: bold;
+         padding: 10px;
         font-size: 14px;
       }
       
       .button-54.nvidia {
         background-color: #cccccc; /* light grey */
         border: none;
-        color: white;
+        color: rgb(38, 33, 33);font-weight: bold;
         padding: 10px;
         font-size: 14px;
       }
