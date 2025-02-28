@@ -71,4 +71,7 @@ body {
   .navigation-buttons button:focus {
     outline: none;
   }
-  
+  .toggleReadMore{
+    color:red;
+    background-color: aquamarine;
+}

@@ -6,8 +6,13 @@ const LoadApp = ({ onDataLoaded }) => {
       try {
         const fetchS3Data = async (url) => {
           const response = await fetch(url);
-          if (!response.ok) throw new Error(`Failed to fetch ${url}`);
-          return await response.json();
+          const text = await response.text(); // Fetch response as text
+          try {
+            return JSON.parse(text); // Try to parse it as JSON
+          } catch (error) {
+            console.error(`Failed to parse JSON for ${url}:`, text); // Log the response text if parsing fails
+            throw new Error(`Failed to fetch ${url}`);
+          }
         };
 
         let data1 = await fetchS3Data(process.env.REACT_APP_ftse);
@@ -38,8 +43,24 @@ const LoadApp = ({ onDataLoaded }) => {
         console.log('Fetched data7:', data7);
         data7 = data7.reverse();
 
+        let data8 = await fetchS3Data(process.env.REACT_APP_amazon);
+        console.log('Fetched data8:', data8);
+        data8 = data8.reverse();
+
+        let data9 = await fetchS3Data(process.env.REACT_APP_amd);
+        console.log('Fetched data9:', data9);
+        data9 = data9.reverse();
+
+        let data10 = await fetchS3Data(process.env.REACT_APP_netflix);
+        console.log('Fetched data10:', data10);
+        data10 = data10.reverse();
+
+        let data11= await fetchS3Data(process.env.REACT_APP_xeonn);
+        console.log('Fetched data11:', data11);
+        data11 = data11.reverse();
+
         // Update state with individually reversed data
-        onDataLoaded([data1, data2, data3, data4, data5, data6, data7]);
+        onDataLoaded([data1, data2, data3, data4, data5, data6, data7,data8,data9,data10,data11]);
 
       } catch (error) {
         console.error('Error fetching data:', error);

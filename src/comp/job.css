@@ -38,4 +38,13 @@ body {
   .navigation-buttons button:focus {
     outline: none;
   }
+  .toggleReadMore{
+    color:red;
+    background-color: none;
+    border-width: 0px;;
+}
+.toggleReadMore:hover{
+  color:gold;
+  background-color: white;
+}
   

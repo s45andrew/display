@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css';
+import './buttons.css';
 
 const Football = () => {
-  const s3Url = 'https://myfrantic.s3.eu-west-2.amazonaws.com/local-football-data.json'; // S3 object URL
+  const s3Url = process.env.REACT_APP_FOOTBALL_DATA_URL;
   const [articles, setArticles] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedIndexes, setExpandedIndexes] = useState({});
   const [error, setError] = useState('');
 
   async function fetchData() {
@@ -34,6 +36,13 @@ const Football = () => {
     setCurrentIndex((prevIndex) => (prevIndex < articles.length - 1 ? prevIndex + 1 : 0));
   };
 
+  const toggleReadMore = (index) => {
+    setExpandedIndexes((prevIndexes) => ({
+      ...prevIndexes,
+      [index]: !prevIndexes[index],
+    }));
+  };
+
   return (
     <div className='football'>
       <h1>Football Stuff Page</h1>
@@ -47,9 +56,19 @@ const Football = () => {
                 {articles[currentIndex].title}
               </a>
             </h3>
-            <div className="navigation-buttons">
-              <button onClick={handlePrevious}>&uarr; Previous</button>
-              <button onClick={handleNext}>&darr; Next</button>
+           
+            <div className="articles-container">
+              {articles.map((item, index) => (
+                <div key={index} className="article" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
+                  <h2>{item.title}</h2>
+                  <p>
+                    {expandedIndexes[index] ? item.content : item.content.substring(0, 100) + '...'}
+                    <button clsssName='toggleReadMore' onClick={() => toggleReadMore(index)}>
+                      {expandedIndexes[index] ? 'Read less' : 'Read more'}
+                    </button>
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         )

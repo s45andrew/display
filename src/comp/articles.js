@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './articles.css';
 
+
 const S3DataFetcher = () => {
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedIndexes, setExpandedIndexes] = useState({});
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -12,7 +14,7 @@ const S3DataFetcher = () => {
     const fetchData = async () => {
       try {
         const url = process.env.REACT_APP_LOCAL_NEWS_DATA_URL;
-         const response = await axios.get(url);
+        const response = await axios.get(url);
         if (Array.isArray(response.data)) {
           setData(response.data);
         } else {
@@ -37,6 +39,13 @@ const S3DataFetcher = () => {
     setCurrentIndex((prevIndex) => (prevIndex < data.length - 1 ? prevIndex + 1 : 0));
   };
 
+  const toggleReadMore = (index) => {
+    setExpandedIndexes((prevIndexes) => ({
+      ...prevIndexes,
+      [index]: !prevIndexes[index],
+    }));
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -49,20 +58,21 @@ const S3DataFetcher = () => {
     <div className="news-listings" style={{ padding: '20px' }}>
       <div className='joiner'> 
         <div><h1>Local News</h1></div>
-        <div className="navigation-buttons" >
-          <div className='joiner'>
-              <button onClick={handlePrevious}>⬆️ </button>
-              <button onClick={handleNext}>⬇️</button>
-              </div>
-            </div>
+       
       </div>
       {data.length > 0 && (
-        <div className="article-container" style={{ position: 'relative' }}>
-          <div style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px', position: 'relative' }}>
-          
-            <h2>{data[currentIndex].article}</h2>
-            <p>{data[currentIndex].details}</p>
-          </div>
+        <div className="articles-container">
+          {data.map((item, index) => (
+            <div key={index} className="article" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
+              <h2>{item.article}</h2>
+              <p>
+                {expandedIndexes[index] ? item.details : item.details.substring(0, 100) + '...'}
+                <button clsssName='toggleReadMore'onClick={() => toggleReadMore(index)}>
+                  {expandedIndexes[index] ? 'Read less' : 'Read more'}
+                </button>
+              </p>
+            </div>
+          ))}
         </div>
       )}
     </div>

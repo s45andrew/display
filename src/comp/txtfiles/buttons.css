@@ -1,0 +1,42 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the buttons */
+ }
+  
+  .button-54 {
+    flex-grow: 1;
+    border: 2px solid transparent; /* Initial border to avoid layout shift */
+    transition: border-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .button-54:hover {
+    border-width: 3px;
+    border-color: white;
+    color: crimson;
+    font-weight: bolder;
+  }
+  
+
+.button-container{
+    background-color: darkslategray;
+    color: beige;
+    
+}
+.butt{
+    background-color: darkslategray;
+    color: rgb(234, 236, 234);  
+    border: none;
+}
+.butt:hover {
+    color: rgb(250, 167, 12); 
+}
+.butt.active {
+    color: rgb(250, 167, 12); 
+}
+.text{
+    color: rgb(250, 167, 12);
+}
+.toggleReadMore{
+    color:red;
+}

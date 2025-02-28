@@ -1,129 +1,59 @@
+/* App.css */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
 .App {
-  text-align: center;
-}
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-.jobs{
-  display: flex;
-  padding:20px;
-}
-.listings{
-  flex:1;
-  padding:10px;
-}
-
-.details{
-  flex:1;
-  padding:10px;  background-color: #454444;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 30vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-.football{
-  background-color: silver;
-  margin-left: 5px;
-}
-.stocks{
-  background-color: rgb(244, 205, 205);
+.myNavbar1, .myNavbar {
+  flex: 0 0 auto;
+  background-color: rgba(6, 70, 232, 0.488);
 }
 
-.joiner {
-  display: flex;          /* Use Flexbox to arrange items */
-  flex-direction: row; 
-  justify-content:space-between;   /* Display divs side by side */
-}
-.flex-container {
-  display: flex;
-}
-.flex-child {
-  flex: 1;
-  border: 2px solid yellow;
-}  
-
-
-.right {
-  flex:1; width:45%;
-  background-color: rgb(78, 56, 56);
-  color: white;           /* Change font color */
-  padding: 10px;
-  margin-right: 10px;     /* Space between divs */
+.main-content {
+  flex: 1 1 auto;
+  overflow-y: auto;
 }
 
-.right:myTwitter {
-  
-  margin: 3px;
-  padding: 7px;
-  
-  border-width: 3px;
-  border-color: rgb(246, 246, 249);
-  color: blue;  
-          } 
-
-
-
-   
-   
-.other {
-  color: green; /* Add color for demonstration */
-}
-
-.jobs{
-  background-color: rgb(208, 243, 177);
-}
 .nav-buttons {
-  display: flex;
-  gap: 0px;
-  justify-content:center
+  display: flex; /* Display buttons in a row */
+  gap: 1px;
 }
 
 .nav-buttons button {
-  padding: 3px 5px;
-  font-size: 16px;
+  padding: 10px 55px;
+  font-size: 14px;
   border: none;
-  background-color: #007bff;
+  background-color: rgba(6, 70, 232, 0.488);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .nav-buttons button:hover {
-  background-color: #0056b3;
-  color:gold;
+  background-color: rgb(223, 118, 118);
+  color: gold;
 }
 
 .nav-buttons button:focus {
   outline: none;
 }
-.nav-buttons .active button {
-  background-color: #0056b3; color:gold;
+
+.nav-buttons button:active {
+  background-color: rgb(223, 118, 118);
+  color: gold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-buttons .active button {
+  color: gold; /* Ensure text is gold when the link is active */
+}
+.theGraph{
+  background-color: rgb(171, 172, 171);
+  
 }

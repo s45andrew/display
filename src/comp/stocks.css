@@ -1,27 +1,37 @@
 .stocks{
     
-    background-color: bisque;
-     padding:2px;margin:22px;
+    background-color: rgb(70, 69, 69);
+     padding:2px;margin:2px;
   }
-
+.titles{
+  color:rgb(238, 209, 209);
+  padding-left: 8px;
+}
   
   .flex-container {
     display: flex;
 }
 .flex-child {
     flex: 1;
-    border: 2px solid yellow;
+    border: 2px solid rgb(42, 42, 42);
     padding :5px; color :rgb(29, 28, 28);
 }  
 .flex-child:first-child {
+  flex: 3;
+
     margin-right: 5px;
-    border: 2px solid rgb(60, 60, 56);
+    border: 2px solid rgb(235, 235, 61);
     padding-right: 3px;
-    color :black;
-    height: 50vh; 
+    color :rgb(210, 208, 208);
+    background-color: rgb(42, 41, 39);
+ 
 } 
 
-
+.searchedResults{
+  border-radius: 5px; border-color: rgb(215, 198, 198);
+  background-color: #a1a49f; color :rgb(242, 241, 229);
+  padding-left: 12px;
+}
   
   .myTwitter {
     
@@ -39,28 +49,53 @@
         justify-content: space-around; /* Space buttons with a fixed gap */
         gap: 5px; /* Reduced gap between buttons */
       }
-      .button-54.ftse {
-        background-color: #ff9999; /* light red */
+     
+      .button-54.xeonn {
+        background-color: #080808; /* light grey */
         border: none;
-        color: white;
+        color: rgb(241, 231, 231);font-weight: bold;
         padding: 10px;
         font-size: 14px;
       }
-      
+    
+      .button-54.ftse {
+        background-color: #ff9999; /* light red */
+       color: white;
+        padding: 10px;
+        font-size: 14px;
+      }
+      .button-54.AMD {
+        background-color: #ef3fd2; /* light blue */
+        border: none;
+        color: rgb(28, 17, 17); font-weight: bold;
+        
+        padding: 10px;
+        font-size: 14px;
+      } 
       .button-54.tesla {
-        background-color: #99ccff; /* light blue */
+        background-color: #021121; /* light blue */
         border: none;
         color: white; font-weight: bold;
         
         padding: 10px;
         font-size: 14px;
       }
+      .button-54.netflix {
+        background-color: #077cf8; /* light blue */
+        border: 2px;
+        color: rgb(244, 6, 6); font-weight: bold;
+         font-size: 14px;
+      } .button-54.netflix:hover {
+        color: white;
+        border-color: white;
+      }
+      
       
       .button-54.chipotle {
         background-color: #ffcc99; /* light orange */
         border: none;
         color: rgb(38, 33, 33);font-weight: bold;
-        padding: 10px;
+  
         font-size: 14px;
       }
       
@@ -68,7 +103,7 @@
         background-color: #ffccff; /* light pink */
         border: none;
         color: rgb(18, 15, 3);
-        padding: 10px;
+     
         font-size: 14px;
       }
       
@@ -96,3 +131,12 @@
         font-size: 14px;
       }
       
+        .button-54 {
+          flex-grow: 1;
+          border: 2px solid transparent; /* Initial border to avoid layout shift */
+          transition: border-color 0.3s ease; /* Smooth transition */
+        }
+      .button-54:hover{
+        border: 2px;
+        border-color: white;
+      }

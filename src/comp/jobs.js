@@ -8,6 +8,7 @@ const CombinedComponent = () => {
   const [data, setData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedJob, setSelectedJob] = useState(null);
+  const [expandedIndexes, setExpandedIndexes] = useState({});
   const [error, setError] = useState('');
   const [loadingS3, setLoadingS3] = useState(true);
 
@@ -43,6 +44,13 @@ const CombinedComponent = () => {
     setCurrentIndex((prevIndex) => (prevIndex < data.length - 1 ? prevIndex + 1 : 0));
   };
 
+  const toggleReadMore = (index) => {
+    setExpandedIndexes((prevIndexes) => ({
+      ...prevIndexes,
+      [index]: !prevIndexes[index],
+    }));
+  };
+
   if (loading) {
     return <div>Loading job listings...</div>;
   }
@@ -52,23 +60,24 @@ const CombinedComponent = () => {
   }
 
   return (
-    <div className='combined-container'>
-      <div className='joiner'>
+    <div className="combined-container">
+      <div className="joiner">
         <div><h1>Job Listings</h1></div>
-        <div className="navigation-buttons" >
-          <div className='buttons'>
-            <button onClick={handlePrevious}>⬆️</button>
-            <button onClick={handleNext}>⬇️</button>
-          </div>
-        </div>
+      
       </div>
       <div className="news-listings" style={{ padding: '20px' }}>
-        <div className="article-container" style={{ position: 'relative' }}>
-          <div style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px', position: 'relative' }}>
-           
-            <h2>{data[currentIndex].article}</h2>
-            <p>{data[currentIndex].details}</p>
-          </div>
+        <div className="articles-container">
+          {data.map((item, index) => (
+            <div key={index} className="article" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
+              <h2>{item.article}</h2>
+              <p>
+                {expandedIndexes[index] ? item.details : item.details.substring(0, 100) + '...'}
+                <button className='toggleReadMore' onClick={() => toggleReadMore(index)}>
+                  {expandedIndexes[index] ? 'Read less' : 'Read more'}
+                </button>
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
