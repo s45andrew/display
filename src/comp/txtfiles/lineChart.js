@@ -67,8 +67,8 @@ const LineChart = () => {
   };
 
   // Calculate the y-axis range based on the selected period
-  const yMin = Math.min(...tempPoints) * 0.9;
-  const yMax = Math.max(...tempPoints) * 1.1;
+  const yMin = Math.min(...tempPoints) * 0.92;
+  const yMax = Math.max(...tempPoints) * 1.08;
 
   // Use useMemo for optimized chart data
   const chartData = useMemo(
@@ -134,9 +134,11 @@ const LineChart = () => {
         <button className="button-54 microsoft" onClick={() => handleClick(5, 'Microsoft', 'rgb(117, 12, 68)')}>Microsoft</button>
         <button className="button-54 nvidia" onClick={() => handleClick(6, 'Nvidia', 'rgba(204,204,204,1)')}>Nvidia</button>
       </div>
-      <h2>{stName} {price} . . <span style={titleStyle}>${difference}</span></h2>
-      <Line data={chartData} options={chartOptions} />
-      <div className="button-container">
+      <h3>{stName} {price} . . <span style={titleStyle}>${difference}</span></h3>
+      <div className="chart-container"> {/* Apply the CSS class */}
+        <Line data={chartData} options={chartOptions} />
+      </div>
+     <div className="button-container">
         <button className={`butt ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>a day</button>
         <button className={`butt ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
         <button className={`butt ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>

@@ -6,8 +6,7 @@ import LineGraph from './txtfiles/lineChart'
 const Stock = () => {
   return  (
     <div className='stocks'>
-      <h3 className='titles'> stock details Page</h3>
-      <div className="flex-container">
+     <div className="flex-container">
         
         <div className="flex-child magenta">
         
@@ -17,15 +16,19 @@ const Stock = () => {
         </div>
         
         <div className="flex-child green">
+        <h3 className='titles'> stock details Page</h3>
+      
           twitter news<br />
           <div className='myTwitter'><br />br twitter<br /></div>
         </div>
         
       </div>
       <div className='jooiner'>
-        <div className='other'><br /><br /></div>
+        <div className='other'></div>
         <div className='right'>
-              share news<br />
+        <h3 className='titles'> latest news</h3>
+      
+            
           <div className='searchedResults'><br />..related stories<br />.</div>
           <br /><br /><br />
         </div>

@@ -36,11 +36,7 @@ function LoginPage() {
        <div className="App" style={{ height: '100vh', overflowY: 'scroll' }}>
            <header className="App-header">
                <div className='login'>
-                   <div className='navy'>
-                       <nav>       
-                           <Link to="/news">News</Link>
-                       </nav>
-                   </div>
+                 
                </div>
            </header>
            <div className="StockStuff">
@@ -51,8 +47,8 @@ function LoginPage() {
                </div>
                <div className="tesla">
                    <div className='theGraph'>
-                   <div className='theGraph' style={{ width: '530px', height: '400px', overflow: 'hidden' }}>
-  <LineChart data={graph} width={530} height={300} />
+                   <div className='theGraph' style={{ width: '560px', height: '410px', overflow: 'hidden' }}>
+  <LineChart data={graph} width={560} height={250} />
 </div>
                    </div>
                </div>

@@ -18,7 +18,7 @@
 }  
 .flex-child:first-child {
   flex: 3;
-
+   height :350px;
     margin-right: 5px;
     border: 2px solid rgb(235, 235, 61);
     padding-right: 3px;
@@ -31,8 +31,13 @@
   border-radius: 5px; border-color: rgb(215, 198, 198);
   background-color: #a1a49f; color :rgb(242, 241, 229);
   padding-left: 12px;
+  margin-left: 5px;
 }
-  
+.chart-container {
+  height: 200px; /* Adjust this value to make the chart shorter or taller */
+  max-width: 100%;
+}
+
   .myTwitter {
     
     margin: 3px;

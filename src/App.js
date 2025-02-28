@@ -18,7 +18,7 @@ const App = () => {
         <SportProvider>
           <JobProvider>
             <div className="App">
-              <div className='myNavbar1'>
+         
                 <div className='myNavbar'>
                   <nav>
                     <div className="nav-buttons">
@@ -43,7 +43,7 @@ const App = () => {
                     </div>
                   </nav>
                 </div>
-              </div>
+              
               <div className="main-content">
                 <Routes>
                   <Route path="/jobs" element={<JobList />} />
