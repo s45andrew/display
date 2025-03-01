@@ -1,13 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const StockNews =({ selectedCompany }) => {
-  
+const StockNews = ({ selectedCompany }) => {
   const [news, setNews] = useState({});
   const [error, setError] = useState(null);
   const s3Url = process.env.REACT_APP_NEWS_GOOGLE_NEWS;
 
   // Debugging: Log the value of selectedCompany and fetched data
-
   useEffect(() => {
     if (selectedCompany) {
       console.log('Fetching news for:', selectedCompany); // Debugging
@@ -31,20 +29,26 @@ const StockNews =({ selectedCompany }) => {
 
   return (
     <div>
-      <h3>{selectedCompany ? `News for ${selectedCompany}` : 'No company selected'}</h3>
       {error && <p>{error}</p>}
-      {news[selectedCompany] ? (
-        <div>
+      {selectedCompany ? (
+        <>
           <h2>News for {selectedCompany.charAt(0).toUpperCase() + selectedCompany.slice(1)}:</h2>
-          {news[selectedCompany].map((item, index) => (
-            <div key={index}>
-              <h3>{item.title}</h3>
-              <p><a href={item.link} target="_blank" rel="noopener noreferrer">{item.link}</a></p>
+          {news[selectedCompany] ? (
+            <div>
+              {news[selectedCompany].map((item, index) => (
+                <div key={index}>
+                  <h3>{item.title}</h3>
+                  <p>{item.snippet}</p>
+                  <p><a href={item.link} target="_blank" rel="noopener noreferrer">Read more</a></p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          ) : (
+            <p>No news available for the selected company.</p>
+          )}
+        </>
       ) : (
-        <p>No news available for the selected company.</p>
+        <h3>No company selected</h3>
       )}
     </div>
   );

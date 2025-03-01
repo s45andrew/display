@@ -26,8 +26,7 @@ const Stock = () => {
       <div className='jooiner'>
         <div className='other'></div>
         <div className='right'>
-          <h3 className='titles'>Latest News</h3>
-          <div className='searchedResults'><br /> 
+         <div className='searchedResults'><br /> 
           <StockNews selectedCompany={selectedCompany.toLowerCase()} />
 
           </div>
