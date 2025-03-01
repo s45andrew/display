@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LineChart from './lineChart';
 import LoadApp from '../../loader.js'; // Adjust the path as needed
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 function LoginPage() { 
    const [loadedData, setLoadedData] = useState([]);
+
    const [currentSource, setCurrentSource] = useState([]);
    const [price, setPrice] = useState('');
    const [graphtitle, setGrapthTitle] = useState('');
@@ -48,7 +49,7 @@ function LoginPage() {
                <div className="tesla">
                    <div className='theGraph'>
                    <div className='theGraph' style={{ width: '560px', height: '410px', overflow: 'hidden' }}>
-  <LineChart data={graph} width={560} height={250} />
+        <LineChart data={graph} width={560} height={250} />
 </div>
                    </div>
                </div>

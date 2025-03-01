@@ -1,36 +1,37 @@
-// src/components/About.js
-import React from 'react';
+import React, { useContext } from 'react';
 import '../comp/stocks.css';
-import LineGraph from './txtfiles/lineChart'
+import LineGraph from './txtfiles/lineChart';
+import StockNews from './txtfiles/readGoogle';
+import { GlobalStateContext } from './txtfiles/GlobalStateContext';
 
 const Stock = () => {
-  return  (
+  const { selectedCompany, setSelectedCompany } = useContext(GlobalStateContext);
+
+  return (
     <div className='stocks'>
-     <div className="flex-container">
-        
+      <div className="flex-container">
         <div className="flex-child magenta">
-        
-          
           <LineGraph />
-          <br /> <br /> <br /> <br />
+          <br /><br /><br /><br />
         </div>
         
         <div className="flex-child green">
-        <h3 className='titles'> stock details Page</h3>
-      
-          twitter news<br />
-          <div className='myTwitter'><br />br twitter<br /></div>
+          <h3 className='titles'>Stock Details Page</h3>
+          <div>twitter news</div>
+          <div className='myTwitter'><br />br twitter<br />
+          <h3>{selectedCompany}</h3></div>
         </div>
-        
       </div>
+      
       <div className='jooiner'>
         <div className='other'></div>
         <div className='right'>
-        <h3 className='titles'> latest news</h3>
-      
-            
-          <div className='searchedResults'><br />..related stories<br />.</div>
-          <br /><br /><br />
+          <h3 className='titles'>Latest News</h3>
+          <div className='searchedResults'><br /> 
+          <StockNews selectedCompany={selectedCompany.toLowerCase()} />
+
+          </div>
+          <br /><br />
         </div>
       </div>
     </div>

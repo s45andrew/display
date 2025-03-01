@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { GlobalStateProvider } from './comp/txtfiles/GlobalStateContext';
 import { JobProvider } from './comp/jobContext';
 import { SportProvider } from './comp/sportContext';
 import { NewsProvider } from './comp/newsContext';
@@ -14,6 +15,7 @@ import LoginPage from './comp/txtfiles/myStocks';
 const App = () => {
   return (
     <Router>
+      <GlobalStateProvider>
       <NewsProvider>
         <SportProvider>
           <JobProvider>
@@ -58,6 +60,7 @@ const App = () => {
           </JobProvider>
         </SportProvider>
       </NewsProvider>
+      </GlobalStateProvider>
     </Router>
   );
 };

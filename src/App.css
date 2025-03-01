@@ -14,8 +14,8 @@ body, html, #root {
 .myNavbar {
   flex: 0 0 auto;
   height:38px;
-  background-color:  rgba(13, 78, 242, 0.488);
-  
+  background-color: rgb(70, 69, 69);
+   
 }
 
 
@@ -33,7 +33,7 @@ body, html, #root {
   padding: 5px 15px;
   font-size: 14px;
   border: none;
-  background-color:  rgba(13, 78, 242, 0.488);
+  background-color: rgb(70, 69, 69);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -49,13 +49,16 @@ body, html, #root {
 }
 
 .nav-buttons button:active {
-  background-color: rgb(223, 118, 118);
-  color: gold;
+  background-color: rgb(70, 69, 69);
+   color: gold;
+   font-size: 17px;
 }
 
-.nav-buttons .active button {
-  color: gold; /* Ensure text is gold when the link is active */
-}
+
+.active button {
+  background-color: rgb(70, 69, 69);
+  color: gold;
+  font-size: 17px;}
 .theGraph{
   padding: 3px;
   background-color: rgb(171, 172, 171);

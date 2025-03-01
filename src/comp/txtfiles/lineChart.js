@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState,useContext, useEffect, useMemo } from 'react';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import LoadApp from '../../loader.js'; // Adjust the path as needed
 import './buttons.css';
+import { GlobalStateContext } from './GlobalStateContext';
 
 const LineChart = () => {
+  const { selectedCompany, setSelectedCompany } = useContext(GlobalStateContext);
+    
   const [activeButton, setActiveButton] = useState(20);
   const [xAxisLabels, setXAxisLabels] = useState([]);
   const [stName, setStName] = useState('FTSE');
@@ -110,8 +113,10 @@ const LineChart = () => {
 
   // Handle button click to switch datasets and update line color
   const handleClick = (index, label, color) => {
-    setStName(label);
+    
     setCurrentDataset(index);
+    setSelectedCompany(label);
+    setStName(label);
     setLineColor(color); // Update the line color
   };
 
@@ -123,7 +128,7 @@ const LineChart = () => {
         <button className="button-54 amazon" onClick={() => handleClick(7, 'Amazon', 'rgb(153, 236, 255)')}>Amazon</button>
         <button className="button-54 AMD" onClick={() => handleClick(8, 'AMD', 'rgb(244, 68, 9)')}> AMD </button>
         <button className="button-54 netflix" onClick={() => handleClick(9, 'NetFlix', 'rgb(43, 29, 245)')}>NetFlix</button>
-        <button className="button-54 xeonn" onClick={() => handleClick(10, 'Xeonn', 'rgb(26, 20, 0)')}>Xonn</button>
+        <button className="button-54 xeonn" onClick={() => handleClick(10, 'Exxon', 'rgb(26, 20, 0)')}>Exxon</button>
         <button className="button-54 ftse" onClick={() => handleClick(0, 'FTSE', 'rgba(255,153,153,1)')}>FTSE</button>
         <button className="button-54 tesla" onClick={() => handleClick(1, 'Tesla', 'rgb(3, 25, 48)')}>Tesla</button>
       </div>
@@ -138,7 +143,7 @@ const LineChart = () => {
       <div className="chart-container"> {/* Apply the CSS class */}
         <Line data={chartData} options={chartOptions} />
       </div>
-     <div className="button-container">
+     <div className="button-container">Range : 
         <button className={`butt ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>a day</button>
         <button className={`butt ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
         <button className={`butt ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
