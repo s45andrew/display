@@ -139,17 +139,26 @@ const LineChart = () => {
         <button className="button-54 microsoft" onClick={() => handleClick(5, 'Microsoft', 'rgb(117, 12, 68)')}>Microsoft</button>
         <button className="button-54 nvidia" onClick={() => handleClick(6, 'Nvidia', 'rgba(204,204,204,1)')}>Nvidia</button>
       </div>
-      <h3>{stName} {price} . . <span style={titleStyle}>${difference}</span></h3>
-      <div className="chart-container"> {/* Apply the CSS class */}
-        <Line data={chartData} options={chartOptions} />
-      </div>
-     <div className="button-container">Range : 
+      <h3>{stName} {price} . . </h3>
+      <div className='chartspliter'>
+    <div className='left-column'>
+        <span style={titleStyle}>${difference}</span>
+    </div>  
+    <div className='right-column'>
+        <div className="chart-container">
+            <Line data={chartData} options={chartOptions} />
+        </div>
+        <div className="button-container">Range : 
         <button className={`butt ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>a day</button>
         <button className={`butt ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
         <button className={`butt ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
         <button className={`butt ${activeButton === 240 ? 'active' : ''}`} onClick={() => duration(240)}>year</button>
         <button className={`butt ${activeButton === 1000 ? 'active' : ''}`} onClick={() => duration(1000)}>Max</button>
       </div>
+    </div>
+</div>
+
+     
     </div>
   );
 };

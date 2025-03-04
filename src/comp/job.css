@@ -3,6 +3,9 @@ body {
     padding: 7px;
     font-family: Arial, sans-serif;
   }
+  .combined-container{
+    background-color: rgb(55, 55, 55);
+  }
   .joiner {
     display: flex;          /* Use Flexbox to arrange items */
     flex-direction: row; 
@@ -10,6 +13,7 @@ body {
   }
   .news-listings {
     margin: 1px;
+    background-color: rgb(65, 66, 66);
   }
   
   h1, h2, p {

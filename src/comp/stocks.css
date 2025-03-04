@@ -4,7 +4,7 @@
      padding:2px;margin:2px;
   }
 .titles{
-  color:rgb(238, 209, 209);
+  color:rgb(58, 56, 56);
   padding-left: 8px;
 }
   
@@ -20,7 +20,7 @@
   flex: 3;
    height :350px;
     margin-right: 5px;
-    border: 2px solid rgb(235, 235, 61);
+    border: 2px solid rgb(38, 38, 37);
     padding-right: 3px;
     color :rgb(210, 208, 208);
     background-color: rgb(42, 41, 39);
@@ -42,10 +42,10 @@
     
     margin: 3px;
     padding: 7px;
-    background-color: aliceblue;
+    background-color: rgb(45, 46, 46);
     border-width: 3px;
-    border-color: rgb(246, 246, 249);
-    color: blue;  
+    border-color: rgb(9, 9, 9);
+    color: rgb(68, 68, 69);  
      } 
   
   
@@ -62,7 +62,14 @@
         padding: 10px;
         font-size: 14px;
       }
-    
+      .button-54.amazon {
+        background-color: #313131; /* light red */
+       color: rgb(50, 81, 24);
+        padding: 10px;  font-size: 14px;
+      }.button-54.amazon:hover {
+        color: rgb(14, 255, 114);
+        
+      }
       .button-54.ftse {
         background-color: #ff9999; /* light red */
        color: white;

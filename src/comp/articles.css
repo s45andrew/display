@@ -2,6 +2,7 @@ body {
     margin: 3px;  /* Add margin to the body to move content away from the edge */
     padding: 7px;
     font-family: Arial, sans-serif;
+    background-color: rgb(65, 66, 66);
   }
 .toggleReadMore{
     color:red;
@@ -10,10 +11,11 @@ body {
 }
 .toggleReadMore:hover{
   color:gold;
-  background-color: white;
+  background-color: rgb(64, 63, 63);
 }
   .news-listings {
     margin: 1px;
+ 
   }
  
   h1, h2, p {

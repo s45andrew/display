@@ -61,6 +61,6 @@ body, html, #root {
   font-size: 17px;}
 .theGraph{
   padding: 3px;
-  background-color: rgb(171, 172, 171);
-  
+  background-color: rgb(37, 37, 37);
+  color :rgb(188, 182, 182)
 }

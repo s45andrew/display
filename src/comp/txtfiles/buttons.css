@@ -3,7 +3,25 @@
     flex-wrap: wrap;
     justify-content: center; /* Center align the buttons */
  }
-  
+ .chartspliter {
+    display: flex;
+}
+
+.left-column {
+    flex: 1;
+    padding: 10px;
+    
+    box-sizing: border-box;
+}
+
+.right-column {
+    flex: 8;
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
   .button-54 {
     flex-grow: 1;
     border: 2px solid transparent; /* Initial border to avoid layout shift */
@@ -19,12 +37,12 @@
   
 
 .button-container{
-    background-color: darkslategray;
+    background-color: rgb(44,44,44);
     color: beige;
     
 }
 .butt{
-    background-color: darkslategray;
+    background-color: rgb(44, 44, 44);
     color: rgb(234, 236, 234);  
     border: none;
 }
