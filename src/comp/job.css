@@ -29,7 +29,7 @@ body {
     padding: 0px 55px;
     font-size: 14px;
     border: none;
-    background-color: white;
+    background-color: transparent;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -44,11 +44,12 @@ body {
   }
   .toggleReadMore{
     color:red;
-    background-color: none;
+    background-color: transparent;;
     border-width: 0px;;
 }
 .toggleReadMore:hover{
-  color:gold;
-  background-color: white;
+  color: gold;
+  outline: none;
+  background-color: transparent; /* Change this to your desired background color */
 }
   

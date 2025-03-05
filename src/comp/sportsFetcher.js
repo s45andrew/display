@@ -57,7 +57,7 @@ const SportsFetcher = () => {
   return (
     <div className="sports-fetcher">
       <div className='joiner'>
-        <div><h1>Sports Articles</h1></div>
+        <div><h1>Sports Articles44</h1></div>
         
       </div>
       {articles.length > 0 && (
@@ -68,7 +68,7 @@ const SportsFetcher = () => {
                 <h2>{item.title}</h2>
                 <p>
                   {expandedIndexes[index] ? item.details : item.details.substring(0, 100) + '...'}
-                  <button clsssName='toggleReadMore'onClick={() => toggleReadMore(index)}>
+                  <button className='toggleReadMore'onClick={() => toggleReadMore(index)}>
                     {expandedIndexes[index] ? 'Read less' : 'Read more'}
                   </button>
                 </p>

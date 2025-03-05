@@ -116,6 +116,7 @@ const LineChart = () => {
     
     setCurrentDataset(index);
     setSelectedCompany(label);
+    if(label==='cmg'){label='Chipotle'}
     setStName(label);
     setLineColor(color); // Update the line color
   };
@@ -133,7 +134,7 @@ const LineChart = () => {
         <button className="button-54 tesla" onClick={() => handleClick(1, 'Tesla', 'rgb(3, 25, 48)')}>Tesla</button>
       </div>
       <div className="row">
-        <button className="button-54 chipotle" onClick={() => handleClick(2, 'Chipotle', 'rgb(245, 137, 29)')}>Chipotle</button>
+        <button className="button-54 chipotle" onClick={() => handleClick(2, 'cmg', 'rgb(245, 137, 29)')}>Chipotle</button>
         <button className="button-54 bitcoin" onClick={() => handleClick(3, 'Bitcoin', 'rgba(255,204,255,1)')}>Bitcoin</button>
         <button className="button-54 apple" onClick={() => handleClick(4, 'Apple', 'rgba(204,255,153,1)')}>Apple</button>
         <button className="button-54 microsoft" onClick={() => handleClick(5, 'Microsoft', 'rgb(117, 12, 68)')}>Microsoft</button>

@@ -6,12 +6,14 @@ body {
   }
 .toggleReadMore{
     color:red;
-    background-color: none;
+    background-color: none;outline: none;
     border-width: 0px;;
 }
 .toggleReadMore:hover{
-  color:gold;
-  background-color: rgb(64, 63, 63);
+  color:gold;    
+  outline: none;
+  background-color: transparent; /* Change this to your desired background color */
+  outline: none;
 }
   .news-listings {
     margin: 1px;

@@ -70,6 +70,7 @@ body {
     outline: none;
   }
   .toggleReadMore{
-    color:red;
-    background-color: aquamarine;
+    color: red;
+    outline: none;
+    background-color: transparent; /* Change this to your desired background color */
 }
