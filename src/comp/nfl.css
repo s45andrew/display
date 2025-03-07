@@ -35,9 +35,11 @@ body {
   .nav-buttons button:focus {
     outline: none;
   }
+  .white{background:white;  font-size:17px; color:black; border-radius: 6px;margin:7px; }
+  .white:hover{background:rgb(214, 209, 209);  color:black; border-radius: 6px; }
   
   .football {
-    margin-top: 10px;  /* Add margin to the top of the container to reduce the top gap */
+    margin-top: 10px;  margin-left: 5px; /* Add margin to the top of the container to reduce the top gap */
   }
   
   h1, h3 {

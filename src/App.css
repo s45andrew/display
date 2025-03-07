@@ -13,9 +13,8 @@ body, html, #root {
 
 .myNavbar {
   flex: 0 0 auto;
-  height:38px;
-  background-color: rgb(70, 69, 69);
-   
+  height:7%;
+  background-color: #001a82;   
 }
 
 
@@ -30,18 +29,18 @@ body, html, #root {
 }
 
 .nav-buttons button {
-  padding: 5px 15px;
+  padding: 5px 5px;  height: auto;
   font-size: 14px;
   border: none;
-  background-color: rgb(70, 69, 69);
+  background-color: #001a82; 
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .nav-buttons button:hover {
-  background-color: rgb(223, 118, 118);
-  color: gold;
+  background-color: rgb(75, 121, 219);
+  color: gold;border-radius: 5px;
 }
 
 .nav-buttons button:focus {
@@ -49,14 +48,14 @@ body, html, #root {
 }
 
 .nav-buttons button:active {
-  background-color: rgb(70, 69, 69);
+  background-color: #001a82; 
    color: gold;
    font-size: 17px;
 }
 
 
 .active button {
-  background-color: rgb(70, 69, 69);
+  background-color: rgb#001a82;
   color: gold;
   font-size: 17px;}
 .theGraph{

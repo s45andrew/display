@@ -23,7 +23,7 @@ body {
   }
   
   .nav-buttons .active button {
-    background-color: rgb(70, 69, 69);
+    background-color: #001a82; 
   }
   
   .nav-buttons button:hover {
@@ -70,7 +70,7 @@ body {
     outline: none;
   }
   .toggleReadMore{
-    color: red;
+    color: rgb(70, 190, 56);
     outline: none;
     background-color: transparent; /* Change this to your desired background color */
 }

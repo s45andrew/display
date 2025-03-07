@@ -57,7 +57,7 @@ const SportsFetcher = () => {
   return (
     <div className="sports-fetcher">
       <div className='joiner'>
-        <div><h1>Sports Articles44</h1></div>
+        <div><h1>Spl news</h1></div>
         
       </div>
       {articles.length > 0 && (
