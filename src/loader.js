@@ -59,8 +59,33 @@ const LoadApp = ({ onDataLoaded }) => {
         console.log('Fetched data11:', data11);
         data11 = data11.reverse();
 
+        let data12= await fetchS3Data(process.env.REACT_APP_astra);
+        console.log('Fetched data12:', data12);
+        data12 = data12.reverse();
+
+        let data13= await fetchS3Data(process.env.REACT_APP_easyjet);
+        console.log('Fetched data13:', data13);
+        data13 = data13.reverse();
+
+        let data14= await fetchS3Data(process.env.REACT_APP_glencore);
+        console.log('Fetched data14:', data14);
+        data14= data14.reverse();
+
+        let data15= await fetchS3Data(process.env.REACT_APP_rolls);
+        console.log('Fetched data15:', data15);
+        data15 = data15.reverse();
+
+        let data16= await fetchS3Data(process.env.REACT_APP_tesco);
+        console.log('Fetched data16:', data16);
+        data16 = data16.reverse();
+
+        let data17= await fetchS3Data(process.env.REACT_APP_shell);
+        console.log('Fetched data17:', data17);
+        data17 = data17.reverse();
+
+        
         // Update state with individually reversed data
-        onDataLoaded([data1, data2, data3, data4, data5, data6, data7,data8,data9,data10,data11]);
+        onDataLoaded([data1, data2, data3, data4, data5, data6, data7,data8,data9,data10,data11,data12,data13,data14,data15,data16,data17]);
 
       } catch (error) {
         console.error('Error fetching data:', error);

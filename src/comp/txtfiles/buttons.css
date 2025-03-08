@@ -1,4 +1,6 @@
-.row {
+.bbody{
+    margin-left: 17px;
+}.row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center align the buttons */
@@ -9,11 +11,23 @@
 
 .left-column {
     flex: 1;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 0px;padding-bottom: 0px;
     
     box-sizing: border-box;
 }
+.left-column h4 {
+    margin: 2px 0; /* Minimal vertical spacing */
+    padding: 0;    /* Remove any extra padding */
+}
 
+.left-column span {
+    display: inline-block;
+    margin: 2px 0; /* Minimal vertical spacing */
+    padding: 0;    /* Remove extra padding */
+}
+
+.shadow{ color:rgb(72, 91, 108)}
 .right-column {
     flex: 8;
     

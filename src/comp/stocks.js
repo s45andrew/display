@@ -6,7 +6,7 @@ import { GlobalStateContext } from './txtfiles/GlobalStateContext';
 
 const Stock = () => {
   const { selectedCompany, setSelectedCompany } = useContext(GlobalStateContext);
-
+console.log(selectedCompany)
   return (
     <div className='stocks'>
       <div className="flex-container">
@@ -16,6 +16,10 @@ const Stock = () => {
         </div>
         
         <div className="flex-child green">
+        <div className="img-container">
+        <img src='fr2.png' alt='franticStats' />
+        </div>
+          
           <h3 className='titles'>Stock Details Page</h3>
           <div>twitter news</div>
           <div className='myTwitter'><br />br twitter<br />
@@ -24,13 +28,16 @@ const Stock = () => {
       </div>
       
       <div className='jooiner'>
-        <div className='other'></div>
+      <br /> <div className='other'></div>
         <div className='right'>
-         <div className='searchedResults'><br /> 
-          <StockNews selectedCompany={selectedCompany.toLowerCase()} />
+         
+        
+        <div className='searchedResults'><br /> 
+        <StockNews selectedCompany={selectedCompany} />
+
 
           </div>
-          <br /><br />
+          <br />
         </div>
       </div>
     </div>
