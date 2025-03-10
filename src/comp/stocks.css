@@ -3,6 +3,10 @@
     background-color: rgb(70, 69, 69);
      padding-left:5px;margin:2px;
   }
+  .h1-hidden {
+    position: absolute;
+    left: -9999px; /* Hides the element off-screen */
+  }
 .titles{
   color:rgb(58, 56, 56);
   padding-left: 8px;

@@ -25,8 +25,15 @@ body {
   }
   
   .nav-buttons .active button {
-    background-color: rgb(70, 69, 69);
+    font-weight: bold;
+
   }
+  .nav-buttons .active button img {
+  opacity: 0.5; /* Adjust the value (0 to 1) to control transparency */
+}
+.nav-buttons  button img {
+  opacity: 0.5; /* Adjust the value (0 to 1) to control transparency */
+}
   
   .nav-buttons button:hover {
     background-color: #0056b3;

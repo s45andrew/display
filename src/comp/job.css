@@ -44,9 +44,7 @@ body {
     transition: background-color 0.3s;
   }
   
-  .navigation-buttons button:hover {
-    background-color: white;
-  }
+
   
   .navigation-buttons button:focus {
     outline: none;

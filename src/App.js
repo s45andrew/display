@@ -28,19 +28,28 @@ const App = () => {
                         <button>FrAntIc StaTs</button>
                       </NavLink>
                       <NavLink to="/stocks" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button>Stocks</button>
+                        <button> <img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginTop:'0px',opacity: 0.3 }} />
+                         Stocks</button>
                       </NavLink>
                       <NavLink to="/football" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button>Football</button>
+                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'0px' }} />
+                        
+                        Football</button>
                       </NavLink>
                       <NavLink to="/jobs" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button>Jobs</button>
+                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'0px' }} />
+                        
+                        Jobs</button>
                       </NavLink>
                       <NavLink to="/articles" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button>Articles</button>
+                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'0px' }} />
+                        
+                        Articles</button>
                       </NavLink>
                       <NavLink to="/nfl" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button>NFL</button>
+                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'3px' }} />
+                        
+                        NFL</button>
                       </NavLink>
                     </div>
                   </nav>

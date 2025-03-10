@@ -4,6 +4,10 @@ body, html, #root {
   margin: 0;
   overflow: hidden;
 }
+.h1-hidden {
+  position: absolute;
+  left: -9999px; /* Hides the element off-screen */
+}
 
 .App {
   display: flex;
@@ -48,14 +52,14 @@ body, html, #root {
 }
 
 .nav-buttons button:active {
-  background-color: #001a82; 
+  
    color: gold;
    font-size: 17px;
 }
 
 
 .active button {
-  background-color: rgb#001a82;
+  
   color: gold;
   font-size: 17px;}
 .theGraph{
