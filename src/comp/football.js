@@ -63,7 +63,7 @@ const Football = () => {
                   <h2>{item.title}</h2>
                   <p>
                     {expandedIndexes[index] ? item.content : item.content.substring(0, 100) + '...'}
-                    <button clsssName='toggleReadMore' onClick={() => toggleReadMore(index)}>
+                    <button className='toggleReadMore' onClick={() => toggleReadMore(index)}>
                       {expandedIndexes[index] ? 'Read less' : 'Read more'}
                     </button>
                   </p>

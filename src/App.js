@@ -12,6 +12,7 @@ import NFL from './comp/nfl';
 import './App.css'; // Import the CSS file
 import LoginPage from './comp/txtfiles/myStocks';
 
+import Navbar from './comp/txtfiles/navbar';
 const App = () => {
   return (
     <Router>
@@ -21,39 +22,7 @@ const App = () => {
           <JobProvider>
             <div className="App">
          
-                <div className='myNavbar'>
-                  <nav>
-                    <div className="nav-buttons">
-                      <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button>FrAntIc StaTs</button>
-                      </NavLink>
-                      <NavLink to="/stocks" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button> <img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginTop:'0px',opacity: 0.3 }} />
-                         Stocks</button>
-                      </NavLink>
-                      <NavLink to="/football" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'0px' }} />
-                        
-                        Football</button>
-                      </NavLink>
-                      <NavLink to="/jobs" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'0px' }} />
-                        
-                        Jobs</button>
-                      </NavLink>
-                      <NavLink to="/articles" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'0px' }} />
-                        
-                        Articles</button>
-                      </NavLink>
-                      <NavLink to="/nfl" className={({ isActive }) => isActive ? 'active' : ''}>
-                        <button><img src="star.png" alt="" style={{ width: '15px', height: '15px', marginRight: '8px',marginbottom:'3px' }} />
-                        
-                        NFL</button>
-                      </NavLink>
-                    </div>
-                  </nav>
-                </div>
+<Navbar />
               
               <div className="main-content">
                 <Routes>
