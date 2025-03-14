@@ -3,7 +3,7 @@ import { GlobalStateContext } from './GlobalStateContext';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const { buttonStates } = useContext(GlobalStateContext);
+  const { buttonStates, handleReset } = useContext(GlobalStateContext);
 
   return (
     <div className="myNavbar">
@@ -12,6 +12,7 @@ const Navbar = () => {
           <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
             <button>FrAntIc StaTs</button>
           </NavLink>
+
           <NavLink to="/stocks" className={({ isActive }) => (isActive ? 'active' : '')}>
             <button>
               <img
@@ -27,8 +28,9 @@ const Navbar = () => {
               Stocks
             </button>
           </NavLink>
+
           <NavLink to="/football" className={({ isActive }) => (isActive ? 'active' : '')}>
-            <button>
+            <button onClick={() => handleReset('buttonfootball')}>
               <img
                 src="star.png"
                 alt=""
@@ -42,8 +44,9 @@ const Navbar = () => {
               Football
             </button>
           </NavLink>
+
           <NavLink to="/jobs" className={({ isActive }) => (isActive ? 'active' : '')}>
-            <button>
+            <button onClick={() => handleReset('buttonJobData')}>
               <img
                 src="star.png"
                 alt=""
@@ -57,8 +60,9 @@ const Navbar = () => {
               Jobs
             </button>
           </NavLink>
+
           <NavLink to="/articles" className={({ isActive }) => (isActive ? 'active' : '')}>
-            <button>
+            <button onClick={() => handleReset('buttonLocalNews')}>
               <img
                 src="star.png"
                 alt=""
@@ -72,8 +76,9 @@ const Navbar = () => {
               Articles
             </button>
           </NavLink>
+
           <NavLink to="/nfl" className={({ isActive }) => (isActive ? 'active' : '')}>
-            <button>
+            <button onClick={() => handleReset('buttonNFL')}>
               <img
                 src="star.png"
                 alt=""
@@ -87,6 +92,7 @@ const Navbar = () => {
               NFL
             </button>
           </NavLink>
+               <NavLink to="/adding">a</NavLink>
         </div>
       </nav>
     </div>

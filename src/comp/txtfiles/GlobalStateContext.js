@@ -22,8 +22,22 @@ export const GlobalStateProvider = ({ children }) => {
     loadButtonStates();
   }, []); // Only run once on component mount
 
+  // Add reset functionality
+  const handleReset = (buttonName) => {
+    setButtonStates((prevStates) => ({
+      ...prevStates,
+      [buttonName]: 0, // Reset the specific button to 0
+    }));
+  };
+
   return (
-    <GlobalStateContext.Provider value={{ selectedCompany, setSelectedCompany, buttonStates, setButtonStates }}>
+    <GlobalStateContext.Provider value={{ 
+      selectedCompany, 
+      setSelectedCompany, 
+      buttonStates, 
+      setButtonStates, 
+      handleReset 
+    }}>
       {children}
     </GlobalStateContext.Provider>
   );

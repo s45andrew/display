@@ -11,8 +11,9 @@ import Articles from './comp/articles';
 import NFL from './comp/nfl';
 import './App.css'; // Import the CSS file
 import LoginPage from './comp/txtfiles/myStocks';
-
+import NotFound from './comp/txtfiles/notfound';
 import Navbar from './comp/txtfiles/navbar';
+import Adding from './comp/txtfiles/adding';
 const App = () => {
   return (
     <Router>
@@ -32,6 +33,8 @@ const App = () => {
                   <Route path="/nfl" element={<NFL />} />
                   <Route path="/stocks" element={<Stocks />} />
                   <Route path="/" element={<LoginPage />} />
+                  <Route path="*" element={<NotFound />} />
+                  <Route path="adding" element={<Adding /> } />
                 </Routes>
               </div>
             </div>
