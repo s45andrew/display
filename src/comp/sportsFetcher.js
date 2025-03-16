@@ -41,6 +41,11 @@ const SportsFetcher = () => {
     }));
   };
 
+  // Fallback to local image if an image fails to load
+  const handleImageError = (event) => {
+    event.target.src = 'football.jpeg'; // Update this path accordingly
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -83,6 +88,7 @@ const SportsFetcher = () => {
                     <img
                       src={item.imageUrl}
                       alt={item.title}
+                      onError={handleImageError} // Handle image loading error
                       style={{
                         width: '100%',
                         objectFit: 'cover',
