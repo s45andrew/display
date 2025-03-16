@@ -1,0 +1,58 @@
+.sports-fetcher {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .joiner h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .article {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .article-title {
+    width: 100%; /* Ensures the title spans full width */
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .article-content {
+    display: flex; /* Flexbox to make image and details side by side */
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .article-image {
+    width: 50%; /* Image takes up 50% */
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .article-details {
+    width: 50%; /* Details take up 50% */
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .image-unavailable {
+    width: 50%;
+    font-size: 14px;
+    color: red;
+    text-align: center;
+  }
+  

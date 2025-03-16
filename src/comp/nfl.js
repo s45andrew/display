@@ -40,6 +40,37 @@ const NFL = () => {
           </div>
         ))
       )}
+      <div className='helmets'><br /><br /><br />
+        <img src='/helmet/49er.png' alt='49ers'></img>
+        <img src='/helmet/bear.png' alt='bears'></img>
+        <img src='/helmet/brown.png' alt='browns'></img>
+        <img src='/helmet/cardinal.png' alt='arizona'></img>
+
+        <img src='/helmet/chief.png' alt='chiefss'></img>
+        <img src='/helmet/cowboy.png' alt='cowboys'></img>
+        <img src='/helmet/eagle.png' alt='eagles'></img>
+        <img src='/helmet/giant.png' alt='giants'></img>
+        
+        <img src='/helmet/dolphin.png' alt='miami dolphins'></img>
+        <img src='/helmet/jaaguar.png' alt='jaguars'></img>
+        <img src='/helmet/lion.png' alt='lions'></img>
+        <img src='/helmet/packer.png' alt='packer'></img>
+        
+        
+        <img src='/helmet/panther.png' alt='panthers'></img>
+        <img src='/helmet/patriot.png' alt='patriots'></img>
+        <img src='/helmet/raider.png' alt='raiders'></img>
+        <img src='/helmet/ram.png' alt='LA Rams'></img>
+        
+        <img src='/helmet/raven.png' alt='ravens'></img>
+        <img src='/helmet/wasington.png' alt='commanders'></img>
+                <img src='/helmet/saint.png' alt='saints'></img> 
+        <img src='/helmet/seahawk.png' alt='seahawks'></img> 
+               <img src='/helmet/viking.png' alt='vikings'></img>  
+         <img src='/helmet/titan.png' alt='titans'></img>
+                <img src='/helmet/texan.png' alt='texans'></img>
+               <img src='/helmet/stealer.png' alt='pitsburgh'></img>
+    </div>
     </div>
   );
 };

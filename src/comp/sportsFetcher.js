@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './job.css';
+import './articles.css';
 
 const SportsFetcher = () => {
   const [articles, setArticles] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [expandedIndexes, setExpandedIndexes] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [expandedIndexes, setExpandedIndexes] = useState({});
 
   // Fetch data from the API
   useEffect(() => {
@@ -15,6 +14,10 @@ const SportsFetcher = () => {
       try {
         const URL = process.env.REACT_APP_FOOTBALL_DATA_URL; // URL from environment variable
         const response = await axios.get(URL);
+
+        // Log the fetched articles for debugging
+        console.log('Fetched Articles:', response.data);
+
         if (response.data && Array.isArray(response.data)) {
           setArticles(response.data);
         } else {
@@ -31,14 +34,6 @@ const SportsFetcher = () => {
     fetchData();
   }, []);
 
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : articles.length - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex < articles.length - 1 ? prevIndex + 1 : 0));
-  };
-
   const toggleReadMore = (index) => {
     setExpandedIndexes((prevIndexes) => ({
       ...prevIndexes,
@@ -51,42 +46,78 @@ const SportsFetcher = () => {
   }
 
   if (error) {
-    return <p className="error-message">{error}</p>;
+    return <p style={{ color: 'red' }}>Error: {error}</p>;
   }
 
   return (
-    <div className="sports-fetcher">
+    <div className="news-listings" style={{ padding: '20px' }}>
       <div className="joiner">
-        <h1>Special News</h1>
+        <h1>Latest Stories</h1>
       </div>
       {articles.length > 0 ? (
-        <div>
-          <div className="articles-container">
-            {articles.map((item, index) => (
+        <div className="articles-container">
+          {articles.map((item, index) => (
+            <div
+              key={index}
+              className="article"
+              style={{
+                margin: '20px 0',
+                border: '1px solid #ccc',
+                padding: '10px',
+                borderRadius: '10px',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+              }}
+            >
+              {/* Title at 100% width */}
+              <h2 style={{ width: '100%' }}>{item.title}</h2>
+              {/* Image and article side by side */}
               <div
-                key={index}
-                className="article"
-                style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                  alignItems: 'flex-start',
+                }}
               >
-                <h2>{item.title}</h2>
-                <p>
-                  {item.details
-                    ? expandedIndexes[index]
+                {item.imageUrl && (
+                  <div style={{ flex: '1', maxWidth: '30%' }}>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      style={{
+                        width: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '5px',
+                        maxHeight: '150px',
+                      }}
+                    />
+                  </div>
+                )}
+                <div style={{ flex: '2' }}>
+                  <p>
+                    {expandedIndexes[index]
                       ? item.details
-                      : item.details.substring(0, 100) + '...'
-                    : 'No details available'}{' '}
-                  {/* Safeguard for undefined or null details */}
-                  <button className="toggleReadMore" onClick={() => toggleReadMore(index)}>
-                    {expandedIndexes[index] ? 'Read less' : 'Read more'}
-                  </button>
-                </p>
+                      : `${item.details.substring(0, 150)}...`}
+                    <button
+                      className="toggleReadMore"
+                      onClick={() => toggleReadMore(index)}
+                      style={{
+                        display: 'block',
+                        margin: '10px 0',
+                        backgroundColor: '#007BFF',
+                        color: '#fff',
+                        border: 'none',
+                        padding: '5px 10px',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {expandedIndexes[index] ? 'Read less' : 'Read more'}
+                    </button>
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
-          <div className="navigation-buttons">
-            <button onClick={handlePrevious}>Previous</button>
-            <button onClick={handleNext}>Next</button>
-          </div>
+            </div>
+          ))}
         </div>
       ) : (
         <p>No articles available.</p>

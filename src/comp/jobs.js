@@ -36,13 +36,7 @@ const CombinedComponent = () => {
     fetchData();
   }, []);
 
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : data.length - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex < data.length - 1 ? prevIndex + 1 : 0));
-  };
+ 
 
   const toggleReadMore = (index) => {
     setExpandedIndexes((prevIndexes) => ({
@@ -60,15 +54,16 @@ const CombinedComponent = () => {
   }
 
   return (
-    <div className="combined-container">
+    <div className="combined-containerjobs">
       <div className="joiner">
         <div><h1>Job Listings</h1></div>
       
       </div>
-      <div className="news-listings" style={{ padding: '20px' }}>
-        <div className="articles-container">
+      <div className="news-listingsjobs" style={{ padding: '20px' }}>
+        <div className="articles-containerjobs">
           {data.map((item, index) => (
-            <div key={index} className="article" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
+            <div key={index} className="articlejob" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
+               <h2 className='job-title'>{item.job}</h2>
               <h2>{item.article}</h2>
               <p>
                 {expandedIndexes[index] ? item.details : item.details.substring(0, 100) + '...'}
@@ -81,21 +76,7 @@ const CombinedComponent = () => {
         </div>
       </div>
 
-      {selectedJob ? (
-        <div>
-          <h2>{selectedJob.job}</h2>
-          <p>{selectedJob.details}</p>
-          <button onClick={() => setSelectedJob(null)}>Back to Job Listings</button>
-        </div>
-      ) : (
-        <ul>
-          {jobs.map((job, index) => (
-            <li key={index} onClick={() => setSelectedJob(job)}>
-              <h2>{job.job}</h2>
-            </li>
-          ))}
-        </ul>
-      )}
+      
     </div>
   );
 };

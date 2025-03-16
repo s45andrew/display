@@ -36,12 +36,12 @@ const S3DataFetcher = () => {
   }
 
   return (
-    <div className="job-listings">
+    <div className="job-listings">ijui8hih
             
       {data.length > 0 && (
         <div>
           <div style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
-            <h2>{data[currentIndex].job}</h2>
+            <h2 className='job-title'>{data[currentIndex].job}7777</h2>
             <p>{data[currentIndex].details}</p>
           </div>
 
