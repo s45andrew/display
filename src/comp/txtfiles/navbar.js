@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav>
         <div className="nav-buttons">
           <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
-            <button>FrAntIc StaTs</button>
+            <button>FRANTIC Stats</button>
           </NavLink>
 
           <NavLink to="/stocks" className={({ isActive }) => (isActive ? 'active' : '')}>

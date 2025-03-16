@@ -23,7 +23,7 @@ body {
   }
   
   .nav-buttons .active button {
-    background-color: #001a82; 
+    background-color: rgb(26, 25, 25);
   }
   
   .nav-buttons button:hover {

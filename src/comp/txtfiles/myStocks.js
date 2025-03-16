@@ -37,22 +37,8 @@ function LoginPage() {
        <div className="App" style={{ height: '100vh', overflowY: 'scroll' }}>
            <header className="App-header">
                <div className='login'>
-               <h1 className="h1-hidden">
-               Nvidia (NVDA) Stock Price, News, and Analysis,
-                NetFlix (NFLX) Stock Price, News, and Analysis,
-               Aplle (APPL) Stock Price, News, and Analysis,<br />
-               FTSE (FTSE) Stock Price, News, and Analysis,
-                 Chipotle (CMG) Stock Price, News, and Analysis,
-                 Astraeneca (AZN) Stock Price, News, and Analysis,
-                 Amazon (AMZN) Stock Price, News, and Analysis,<br />
-                 EasyJet (EZJ) Stock Price, News, and Analysis,
-                 BitCoin (BIT) Stock Price, News, and Analysis,
-                 Rolls-Royce (RR.L) Stock Price, News, and Analysis,
-                 GlenCore (GLEN) Stock Price, News, and Analysis,<br />
-                 Shell (SHEL) Stock Price, News, and Analysis,
-                 Tesco (TSCO) Stock Price, News, and Analysis,
-                 Amd (AMD) Stock Price, News, and Analysis,
-                 Microsoft (MSFT) Stock Price, News, and Analysis,
+               <h1 className="h1-hidden">         Nvidia (NVDA) Stock Price, News, and Analysis,   NetFlix (NFLX) Stock Price, News, and Analysis,    Aplle (APPL) Stock Price, News, and Analysis,<br />  FTSE (FTSE) Stock Price, News, and Analysis,
+                 Chipotle (CMG) Stock Price, News, and Analysis,               Astraeneca (AZN) Stock Price, News, and Analysis,                 Amazon (AMZN) Stock Price, News, and Analysis,<br />        EasyJet (EZJ) Stock Price, News, and Analysis,                 BitCoin (BIT) Stock Price, News, and Analysis,          Rolls-Royce (RR.L) Stock Price, News, and Analysis,       GlenCore (GLEN) Stock Price, News, and Analysis,<br />                Shell (SHEL) Stock Price, News, and Analysis,                 Tesco (TSCO) Stock Price, News, and Analysis,        Amd (AMD) Stock Price, News, and Analysis,         Microsoft (MSFT) Stock Price, News, and Analysis,
                  Exxon (XOM) Stock Price, News, and Analysis</h1>
                </div>
            </header>

@@ -27,13 +27,15 @@
     border: 2px solid rgb(38, 38, 37);
     padding-right: 3px;
     color :rgb(210, 208, 208);
-    background-color: rgb(42, 41, 39);
+    background-color: rgb(26, 25, 25);
+ 
  
 } 
 
 .searchedResults{
   border-radius: 5px; border-color: rgb(215, 198, 198);
-  background-color:  #1d1a8c;; color :rgb(242, 241, 229);
+  background-color: rgb(26, 25, 25);
+    color :rgb(242, 241, 229);
   padding-left: 12px;
   margin-left: 5px;
 }
@@ -46,10 +48,10 @@
     
     margin: 3px;
     padding: 7px;
-    background-color: rgb(45, 46, 46);
-    border-width: 3px;
+    background-color: rgb(26, 25, 25);
+  border-width: 3px;
     border-color: rgb(9, 9, 9);
-    color: rgb(68, 68, 69);  
+    color: rgb(186, 186, 193);  
      } 
   
   
@@ -199,8 +201,8 @@
         outline: none; /* Remove default focus outline */
     }
       .right{
-        background-color: #1d1a8c;
-        padding-left: 5px;;
+        background-color: rgb(26, 25, 25);
+ padding-left: 5px;;
       }
       .img-container {
         width: 100%;

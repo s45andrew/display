@@ -4,6 +4,11 @@ body, html, #root {
   margin: 0;
   overflow: hidden;
 }
+.hidform {
+  display: none;
+  flex-direction: column; /* Adjust based on your layout needs */
+}
+
 .h1-hidden {
   position: absolute;
   left: -9999px; /* Hides the element off-screen */
@@ -18,7 +23,7 @@ body, html, #root {
 .myNavbar {
   flex: 0 0 auto;
   height:7%;
-  background-color: #001a82;   
+  background-color: #090a0b;
 }
 
 
@@ -36,7 +41,7 @@ body, html, #root {
   padding: 5px 5px;  height: auto;
   font-size: 14px;
   border: none;
-  background-color: #001a82; 
+  background-color:  #090a0b;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -64,6 +69,6 @@ body, html, #root {
   font-size: 17px;}
 .theGraph{
   padding: 3px;
-  background-color: rgb(37, 37, 37);
+  background-color: #090a0b;;
   color :rgb(188, 182, 182)
 }

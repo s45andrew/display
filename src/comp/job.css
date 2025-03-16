@@ -2,15 +2,15 @@ body {
     margin: 3px;  /* Add margin to the body to move content away from the edge */
     padding: 7px;
     font-family: Arial, sans-serif;
-    
-      background: linear-gradient(to bottom, #001a82, #000080, #001a82);
+    background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
+  
       height: 100vh; /* Full screen height */
       margin: 0;
   }
   .articles-container{ margin-left: 19px;margin-right: 19px;}
    
-  .combined-container{background: linear-gradient(to bottom, #001a82, #000080, #001a82);
-      
+  .combined-container{   background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
+     
   }
   .joiner {
     display: flex;          /* Use Flexbox to arrange items */
@@ -19,7 +19,7 @@ body {
   }
   .news-listings {
     margin: 1px;
-    background: linear-gradient(to bottom, #001a82, #000080, #001a82);
+    background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
   }
 .article{
   background-color: azure; margin-left: 7px;margin-right: 7px;
