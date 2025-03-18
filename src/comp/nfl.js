@@ -41,19 +41,28 @@ const NFL = () => {
         ))
       )}
       <div className='helmets'><br /><br /><br />
-        <img src='/helmet/49er.png' alt='49ers'></img>
-        <img src='/helmet/bear.png' alt='bears'></img>
-        <img src='/helmet/brown.png' alt='browns'></img>
-        <img src='/helmet/cardinal.png' alt='arizona'></img>
-
-        <img src='/helmet/chief.png' alt='chiefss'></img>
-        <img src='/helmet/cowboy.png' alt='cowboys'></img>
-        <img src='/helmet/eagle.png' alt='eagles'></img>
-        <img src='/helmet/giant.png' alt='giants'></img>
-        
-        <img src='/helmet/dolphin.png' alt='miami dolphins'></img>
+       <a href="https://www.ninersnation.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/49er.png' alt='49ers'></img>  </a>
+       <a href="https://www.yardbarker.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/bear.png' alt='bears'></img> </a>
+       <a href="https://www.clevelandbrowns.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/brown.png' alt='browns'></img></a>
+       <a href="https://www.arivonacardinals.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/cardinal.png' alt='arizona'></img></a>
+       <a href="https://www.kansascitychiefs.com" target="_blank" rel="noreferrer">
+         <img src='/helmet/chief.png' alt='chiefs'></img></a>
+        <a href="https://www.dallascowboys.com" target="_blank" rel="noreferrer">
+        <img src='/helmet/cowboy.png' alt='cowboys'></img></a>
+        <a href="https://www.philadelphiaeagles.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/eagle.png' alt='eagles'></img></a>
+       <a href="https://www.giants.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/giant.png' alt='giants'></img></a>
+       <a href="https://www.miamidolphins.com" target="_blank" rel="noreferrer">
+       
+        <img src='/helmet/dolphin.png' alt='miami dolphins'></img></a>
         <img src='/helmet/jaaguar.png' alt='jaguars'></img>
-        <img src='/helmet/lion.png' alt='lions'></img>
+        <a href="https://www.detroitlions.com" target="_blank" rel="noreferrer">
+       <img src='/helmet/lion.png' alt='lions'></img></a>
         <img src='/helmet/packer.png' alt='packer'></img>
         
         

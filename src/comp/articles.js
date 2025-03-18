@@ -14,23 +14,18 @@ const S3DataFetcher = () => {
         const url = process.env.REACT_APP_LOCAL_NEWS_DATA_URL;
         const response = await axios.get(url);
         if (Array.isArray(response.data)) {
-          // Fix S3 URLs if needed
-          const correctedData = response.data.map((item) => ({
+          // Directly use the new JSON structure
+          const formattedData = response.data.map((item) => ({
             ...item,
-            image: item.image
-              ? item.image.replace(
-                  'https://s3.amazonaws.com/myfrantic/',
-                  'https://myfrantic.s3.eu-west-2.amazonaws.com/'
-                )
-              : null,
+            image: item.image ? `data:image/jpeg;base64,${item.image}` : null,
           }));
-          setData(correctedData);
+          setData(formattedData);
         } else {
           throw new Error('Parsed data is not an array');
         }
       } catch (err) {
         setError(err.message);
-        console.error('Error fetching data from S3:', err);
+        console.error('Error fetching data:', err);
       } finally {
         setLoading(false);
       }
@@ -74,7 +69,7 @@ const S3DataFetcher = () => {
               }}
             >
               {/* Full-width title */}
-              <h2 style={{ width: '100%' }}>{item.article}</h2>
+              <h2 style={{ width: '100%' }}>{item.title}</h2>
               {/* Image and article side by side */}
               <div
                 style={{
@@ -88,7 +83,7 @@ const S3DataFetcher = () => {
                   <div style={{ flex: '1', maxWidth: '30%' }}>
                     <img
                       src={item.image}
-                      alt={item.article}
+                      alt={item.title}
                       style={{
                         width: '100%',
                         objectFit: 'cover',
@@ -102,8 +97,8 @@ const S3DataFetcher = () => {
                 <div style={{ flex: '2' }}>
                   <p>
                     {expandedIndexes[index]
-                      ? item.details
-                      : `${item.details.substring(0, 150)}...`}
+                      ? item.content
+                      : `${item.content.substring(0, 150)}...`}
                     <button
                       className="toggleReadMore"
                       onClick={() => toggleReadMore(index)}

@@ -3,7 +3,33 @@
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
+.image-containeru {
+  position: relative;
+  float: right; /* Positions the image on the far left */
+  margin-left: 120px; /* Adds spacing to the right, if needed */
+}
 
+.image-containeru:hover .tooltip {
+  display: block; /* Makes the tooltip visible on hover */
+}
+
+.imgu {
+  width: 27px; /* Sets the image size */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+.tooltip {
+  display: none; /* Hides the tooltip by default */
+  position: absolute;
+  top: 0;
+  left: 30px; /* Adjusts the position relative to the image */
+  background-color: transparent;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
 .joiner h1 {
   text-align: center;
   font-size: 28px;

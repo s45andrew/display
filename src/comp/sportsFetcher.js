@@ -56,8 +56,14 @@ const SportsFetcher = () => {
 
   return (
     <div className="news-listings" style={{ padding: '20px' }}>
-      <div className="joiner">
-        <h1>Latest Stories</h1>
+ <div className="joiner">
+   <div>
+    <h1>Latest Stories</h1>
+  </div>
+ 
+ 
+
+
       </div>
       {articles.length > 0 ? (
         <div className="articles-container">
@@ -128,6 +134,11 @@ const SportsFetcher = () => {
       ) : (
         <p>No articles available.</p>
       )}
+
+<div className="image-containeru">
+    <img className='imgu' src="/helmet/uefa1.png" alt="uefa" />
+    <div className="tooltip">scotish co-efficient</div>
+  </div>
     </div>
   );
 };
