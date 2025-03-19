@@ -1,9 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './nfl.css';
 
+const ImageButton = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/adding'); // Navigate to the desired route
+  };
+
+  return (
+    <button onClick={handleClick} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+      <img 
+        src="/helmet/raven.png" 
+        alt="Ravens" 
+        style={{ width: '150px', height: '150px' }} 
+      />
+    </button>
+  );
+};
+
 const NFL = () => {
-  const s3Url =  process.env.REACT_APP_NFL_DATA_URL;       
+  const s3Url = process.env.REACT_APP_NFL_DATA_URL;
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState('');
 
@@ -21,7 +40,6 @@ const NFL = () => {
     }
   }
 
-  // Call the fetchData function when the component mounts
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,13 +53,24 @@ const NFL = () => {
         articles.map((article, index) => (
           <div key={index} className='white'>
             <h3>
-              <a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a>
+              <a href={article.link} target="_blank" rel="noopener noreferrer">
+                {article.title}
+              </a>
             </h3>
           </div>
         ))
       )}
-      <div className='helmets'><br /><br /><br />
-       <a href="https://www.ninersnation.com" target="_blank" rel="noreferrer">
+      <div className='helmets'>
+        <br />
+        <br />
+        <br />
+        <a href="https://www.ninersnation.com" target="_blank" rel="noreferrer">
+          <img src='/helmet/49er.png' alt='49ers'></img>
+        </a>
+        <a href="https://www.yardbarker.com" target="_blank" rel="noreferrer">
+          <img src='/helmet/bear.png' alt='bears'></img>
+        </a>
+      <a href="https://www.ninersnation.com" target="_blank" rel="noreferrer">
        <img src='/helmet/49er.png' alt='49ers'></img>  </a>
        <a href="https://www.yardbarker.com" target="_blank" rel="noreferrer">
        <img src='/helmet/bear.png' alt='bears'></img> </a>
@@ -71,15 +100,19 @@ const NFL = () => {
         <img src='/helmet/raider.png' alt='raiders'></img>
         <img src='/helmet/ram.png' alt='LA Rams'></img>
         
-        <img src='/helmet/raven.png' alt='ravens'></img>
+     
+
+     
         <img src='/helmet/wasington.png' alt='commanders'></img>
                 <img src='/helmet/saint.png' alt='saints'></img> 
+                <ImageButton />
         <img src='/helmet/seahawk.png' alt='seahawks'></img> 
                <img src='/helmet/viking.png' alt='vikings'></img>  
          <img src='/helmet/titan.png' alt='titans'></img>
                 <img src='/helmet/texan.png' alt='texans'></img>
                <img src='/helmet/stealer.png' alt='pitsburgh'></img>
-    </div>
+      
+      </div>
     </div>
   );
 };

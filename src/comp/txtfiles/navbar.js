@@ -92,7 +92,7 @@ const Navbar = () => {
               NFL
             </button>
           </NavLink>
-               <NavLink to="/adding">a</NavLink>
+               
         </div>
       </nav>
     </div>

@@ -21,7 +21,12 @@ const CombinedComponent = () => {
         }
         const response = await axios.get(url);
         if (Array.isArray(response.data)) {
-          setData(response.data);
+          // Process data to remove the email placeholder
+          const sanitizedData = response.data.map((item) => ({
+            ...item,
+            details: item.details.replace(/This email address is being protected from spambots. You need JavaScript enabled to view it\./g, ""),
+          }));
+          setData(sanitizedData);
         } else {
           throw new Error('Parsed data is not an array');
         }
@@ -32,6 +37,7 @@ const CombinedComponent = () => {
         console.error('Error fetching data from S3:', err);
       }
     };
+    
 
     fetchData();
   }, []);
@@ -54,7 +60,7 @@ const CombinedComponent = () => {
   }
 
   return (
-    <div className="combined-containerjobs">
+    <div className="news-listings">
       <div className="joiner">
         <div><h1>Job Listings</h1></div>
       

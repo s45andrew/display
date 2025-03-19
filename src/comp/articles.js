@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './articles.css';
+import JobList from './jobs';
 
 const S3DataFetcher = () => {
   const [data, setData] = useState([]);
@@ -50,6 +51,7 @@ const S3DataFetcher = () => {
   }
 
   return (
+  <div className="joiner">
     <div className="news-listings">
       <div className="joiner">
         <h1>Local News</h1>
@@ -125,6 +127,10 @@ const S3DataFetcher = () => {
         <p>No articles available.</p>
       )}
     </div>
+    <div >
+     <JobList />
+    </div>
+  </div>
   );
 };
 
