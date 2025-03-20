@@ -1,0 +1,76 @@
+.todo {
+    background-color: rgb(13, 12, 12);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: antiquewhite;
+    margin: 20px;
+    font-size: 36px; /* Make overall text bigger */
+}
+.inputContainer {
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center the items */
+    align-items: center; /* Vertically align the items */
+    gap: 10px; 
+    margin :10px;/* Add spacing between the input and button */
+  }
+  
+  .todoInput {
+    flex: 1; 
+    background-color: rgb(217, 162, 90);
+    padding: 12px; /* Increase padding for better visibility */
+    margin-left: 10px; color:black;
+    font-size: 20px; /* Bigger input text */
+}input::placeholder {
+    color: black; /* Change placeholder text color to black */
+    font-size: 16px; /* Optional: Adjust font size if needed */
+  }/* Make the input box expand to take available space */
+  
+  
+  .addTaskButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 16px;
+  }
+  
+
+/* Specific styles for removeBut button */
+
+
+/* Styles specific to TodoList's ul and li */
+.todoList li {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Place items at opposite ends */
+    align-items: center; /* Vertically align items */
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: rgb(13, 13, 13); /* Optional background color for tasks */
+    color: antiquewhite;
+    width: 100%; /* Make it stretch full width */
+    box-sizing: border-box;
+  }
+  
+  .taskText {
+    flex: 1; /* Ensures the task text takes up available space */
+    text-align: left; /* Align the text to the left */
+  }
+  
+  .removebBut {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px; /* Optional, for spacing */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .removebBut:hover {
+    background-color: darkred;
+  }
+  
+  .removebBut:active {
+    background-color: firebrick;
+  }
+  

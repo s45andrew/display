@@ -2,6 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './nfl.css';
+const TodoButton = () => {
+  const navigate = useNavigate();
+
+  const handleClicks = () => {
+    navigate('/todoList');
+  };
+
+  return (
+    <button onClick={handleClicks} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+      <img 
+        src="/helmet/saint.png" 
+        alt="Saints" 
+        style={{ width: '150px', height: '150px' }} 
+      />
+    </button>
+  );
+};
 
 const ImageButton = () => {
   const navigate = useNavigate();
@@ -104,7 +121,7 @@ const NFL = () => {
 
      
         <img src='/helmet/wasington.png' alt='commanders'></img>
-                <img src='/helmet/saint.png' alt='saints'></img> 
+                <TodoButton /> 
                 <ImageButton />
         <img src='/helmet/seahawk.png' alt='seahawks'></img> 
                <img src='/helmet/viking.png' alt='vikings'></img>  

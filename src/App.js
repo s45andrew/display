@@ -14,6 +14,7 @@ import LoginPage from './comp/txtfiles/myStocks';
 import NotFound from './comp/txtfiles/notfound';
 import Navbar from './comp/txtfiles/navbar';
 import Adding from './comp/txtfiles/adding';
+import TodoList from './comp/txtfiles/todoList';
 const App = () => {
   return (
     <Router>
@@ -35,6 +36,7 @@ const App = () => {
                   <Route path="/" element={<LoginPage />} />
                   <Route path="*" element={<NotFound />} />
                   <Route path="adding" element={<Adding /> } />
+                  <Route path="todoList" element={<TodoList /> } />
                 </Routes>
               </div>
             </div>

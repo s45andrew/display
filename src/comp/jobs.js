@@ -68,7 +68,7 @@ const CombinedComponent = () => {
       <div className="news-listingsjobs" style={{ padding: '20px' }}>
         <div className="articles-containerjobs">
           {data.map((item, index) => (
-            <div key={index} className="articlejob" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
+            <div key={index} className="articlejob" style={{ margin: '20px 0', border: '1px solid #ccc', borderRadius:'9px' ,padding: '10px' }}>
                <h2 className='job-title'>{item.job}</h2>
               <h2>{item.article}</h2>
               <p>

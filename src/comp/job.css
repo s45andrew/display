@@ -7,7 +7,7 @@ body {
       height: 100vh; /* Full screen height */
       margin: 0;
   }
-  .articles-container{ margin-left: 19px;margin-right: 19px;}
+  .articles-container{ margin-left: 19px;margin-right: 19px;border-radius: 5px;}
    
   .combined-container{   background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
      
@@ -18,7 +18,7 @@ body {
     justify-content:center;   /* Display divs side by side */
   }
   .news-listings {
-    margin: 1px;
+    margin: 1px;border-radius: 5px;
     background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
   }
 .article{
@@ -84,4 +84,8 @@ body {
   outline: none;
   background-color: transparent; /* Change this to your desired background color */
 }
-  
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;border-radius: 5px;
+}

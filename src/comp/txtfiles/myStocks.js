@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import LineChart from './lineChart';
 import LoadApp from '../../loader.js'; // Adjust the path as needed
 import { Link } from 'react-router-dom';
+import Cabinet from './cabinet.js';
 
 function LoginPage() { 
    const [loadedData, setLoadedData] = useState([]);
@@ -56,6 +57,7 @@ function LoginPage() {
                    </div>
                </div>
            </div>
+           <Cabinet />
        </div>
    );
 }

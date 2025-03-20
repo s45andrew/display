@@ -1,0 +1,20 @@
+.cabinet {
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(
+      to bottom,
+      #2d2d2d,
+      #0b0a0a 10%,
+      #393636 20% 80%,
+      #0b0a0a 90%,
+      #2d2d2d
+    ); /* Creates inner depth with shading */
+    border: 2px solid #3e3e3e; /* Outer border */
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.6), /* Outer shadow for depth */
+      inset 0 5px 10px rgba(0, 0, 0, 0.4), /* Top inner shadow */
+      inset 0 -5px 15px rgba(0, 0, 0, 0.6); /* Bottom inner shadow */
+    margin: 20px auto; /* Center on the page */
+    border-radius: 10px; /* Rounded edges */
+  }
+  
