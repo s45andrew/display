@@ -4,9 +4,9 @@ width:380px;
     background-color: rgb(4, 3, 3);
      /* Creates inner depth with shading */
     border: 0px solid #3e3e3e; /* Outer border */
-   margin: 10px auto; /* Center on the page */
+   margin: 19px auto; /* Center on the page */
     border-radius: 10px; /* Rounded edges */
-    
+    padding:12px;
       overflow: hidden; /* Allows scrolling only inside the chart area */
     
     
@@ -19,6 +19,7 @@ width:380px;
   
   .cab {
     width: 300px; /* Same fixed width for all content */
+    padding-left : 22px;
   }
   
   .joinery {

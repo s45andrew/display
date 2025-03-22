@@ -1,5 +1,6 @@
 .news-listings {
   max-width: 800px;
+  height:800px; 
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }

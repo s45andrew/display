@@ -6,6 +6,7 @@ body {
   
       height: 100vh; /* Full screen height */
       margin: 0;
+      overflow-y: scroll;
   }
   .articles-container{ margin-left: 19px;margin-right: 19px;border-radius: 5px;}
    

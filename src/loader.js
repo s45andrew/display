@@ -4,6 +4,7 @@ const LoadApp = ({ onDataLoaded }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log("Environment Variables:", process.env); // Log all environment variables to debug
         const fetchS3Data = async (url) => {
           const response = await fetch(url);
           const text = await response.text(); // Fetch response as text
@@ -83,7 +84,7 @@ const LoadApp = ({ onDataLoaded }) => {
         console.log('Fetched data17:', data17);
         data17 = data17.reverse();
 
-        
+
         // Update state with individually reversed data
         onDataLoaded([data1, data2, data3, data4, data5, data6, data7,data8,data9,data10,data11,data12,data13,data14,data15,data16,data17]);
 

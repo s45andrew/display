@@ -12,20 +12,8 @@ ChartJS.register(
   Legend
 );
 
-const Indices = ({ title }) => {
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-    datasets: [
-      {
-        label: 'Dataset 1',
-        data: [30, 50, 70, 40, 60, 90],
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        tension: 0.4,
-      },
-    ],
-  };
-
+const Indices = ({ title,data }) => {
+ 
   const options = {
     responsive: true,
     plugins: {

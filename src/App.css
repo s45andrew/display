@@ -2,14 +2,13 @@
 body, html, #root {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+ 
 }
 .together {
   display: flex; /* Enables flexbox */
   /* Distributes space between the two divs */
   align-items: center; /* Vertically aligns the divs */
-
-    overflow: hidden; /* Allows scrolling only inside the chart area */
+ /* Allows scrolling only inside the chart area */
   
   
 }
@@ -32,7 +31,7 @@ body, html, #root {
   flex-direction: column;
   height: 100%;
   background-color: #090a0b; padding: 10px;
-  overflow: hidden; /* Allows scrolling only inside the chart area */
+   /* Allows scrolling only inside the chart area */
   
 }
 
@@ -44,7 +43,7 @@ body, html, #root {
 
 
 .main-content {
-  flex: 1 1 auto;overflow: hidden;
+  flex: 1 1 auto;
   
    /* Allows scrolling only inside the chart area */
   
@@ -106,12 +105,12 @@ body, html, #root {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #008cff; /* Color of the scrollbar thumb */
+  background: #202020; /* Color of the scrollbar thumb */
   border-radius: 6px; /* Rounded corners for the thumb */
-  border: 2px solid #f0f0f0; /* Adds a border for contrast */
+  border: 0.5px solid #252525; /* Adds a border for contrast */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #005bb5; /* Color when hovered */
+  background: #6363de; /* Color when hovered */
 }
 

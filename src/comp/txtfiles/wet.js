@@ -8,6 +8,7 @@ const WeatherApp = () => {
   // Mapping descriptions to images
   const weatherIcons = {
     "Sunny Intervals": "sunC.png",
+    "Light cloud": "srain.png",
     "Light Rain": "sunRain.png",
     "Heavy Rain": "torrential.png",
     "Clear Night": "sunC.png",
@@ -63,7 +64,7 @@ const WeatherApp = () => {
                 </div>
                 <h3>{weatherDescription || 'No Description Found'}</h3> {/* Extract and display weather description */}
                 <h4 className='h4B'>
-                  {titleParts[2]?.split(' ')[1] || 'No Min Temp Found'} - {titleParts[3]?.split(' ')[1] || 'No Max Temp Found'}
+                  {titleParts[2]?.split(' ')[1] || 'No Min Temp Found'} - {titleParts[3]?.split(' ')[1] || ''}
                 </h4> {/* Display temperature range */}
               </div>
             );

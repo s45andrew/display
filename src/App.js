@@ -4,7 +4,7 @@ import { GlobalStateProvider } from './comp/txtfiles/GlobalStateContext';
 import { JobProvider } from './comp/jobContext';
 import { SportProvider } from './comp/sportContext';
 import { NewsProvider } from './comp/newsContext';
-import JobList from './comp/jobs';
+
 import SportsFetcher from './comp/sportsFetcher';
 import Stocks from './comp/stocks';
 import Articles from './comp/articles';
