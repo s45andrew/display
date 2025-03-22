@@ -43,6 +43,8 @@ function LoginPage() {
                  Exxon (XOM) Stock Price, News, and Analysis</h1>
                </div>
            </header>
+        <div className='together'>
+            <div className='stleft'>
            <div className="StockStuff">
                <LoadApp onDataLoaded={setLoadedData} />
                <div className='gratit'>
@@ -52,14 +54,20 @@ function LoginPage() {
                <div className="tesla">
                    <div className='theGraph'>
                    <div className='theGraph' style={{ width: '560px', height: '410px', overflow: 'hidden' }}>
-        <LineChart data={graph} width={560} height={250} />
+        <LineChart data={graph} width={560} height={350} />
 </div>
                    </div>
                </div>
            </div>
+           </div>
+           <div className='stright'>
            <Cabinet />
+
        </div>
+    </div>
+    </div>
    );
 }
 
 export default LoginPage;
+

@@ -1,0 +1,28 @@
+{
+    "channel": {
+      "title": "3-Day Weather Forecast for Aberdeen",
+      "link": "http://news.bbc.co.uk/weather/forecast/1234",
+      "description": "Latest weather updates for Aberdeen.",
+      "items": [
+        {
+          "title": "Wednesday: Heavy Rain",
+          "description": "High: 8°C, Low: 3°C. Expect heavy rain throughout the day with strong winds at 15mph SE.",
+          "link": "http://news.bbc.co.uk/weather/forecast/1234/day1",
+          "pubDate": "Wed, 26 Mar 2025 06:00:00 GMT"
+        },
+        {
+          "title": "Thursday: Partly Cloudy",
+          "description": "High: 10°C, Low: 4°C. Partly cloudy with occasional sunshine. Winds: 8mph NE.",
+          "link": "http://news.bbc.co.uk/weather/forecast/1234/day2",
+          "pubDate": "Thu, 27 Mar 2025 06:00:00 GMT"
+        },
+        {
+          "title": "Friday: Sunny",
+          "description": "High: 13°C, Low: 5°C. Clear skies and plenty of sunshine with light winds at 5mph W.",
+          "link": "http://news.bbc.co.uk/weather/forecast/1234/day3",
+          "pubDate": "Fri, 28 Mar 2025 06:00:00 GMT"
+        }
+      ]
+    }
+  }
+  

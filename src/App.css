@@ -4,6 +4,19 @@ body, html, #root {
   margin: 0;
   overflow: hidden;
 }
+.together {
+  display: flex; /* Enables flexbox */
+  /* Distributes space between the two divs */
+  align-items: center; /* Vertically aligns the divs */
+
+    overflow: hidden; /* Allows scrolling only inside the chart area */
+  
+  
+}
+.stright{ padding-right:14px;  overflow: hidden; /* Allows scrolling only inside the chart area */
+}
+
+
 .hidform {
   display: none;
   flex-direction: column; /* Adjust based on your layout needs */
@@ -18,6 +31,9 @@ body, html, #root {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #090a0b; padding: 10px;
+  overflow: hidden; /* Allows scrolling only inside the chart area */
+  
 }
 
 .myNavbar {
@@ -28,8 +44,10 @@ body, html, #root {
 
 
 .main-content {
-  flex: 1 1 auto;
-  overflow-y: auto;
+  flex: 1 1 auto;overflow: hidden;
+  
+   /* Allows scrolling only inside the chart area */
+  
 }
 
 .nav-buttons {
@@ -69,6 +87,31 @@ body, html, #root {
   font-size: 17px;}
 .theGraph{
   padding: 3px;
-  background-color: #090a0b;;
-  color :rgb(188, 182, 182)
+  background-color: #090a0b;border: 2px;border-color: antiquewhite;
+  color :rgb(188, 182, 182);  overflow: hidden; /* Allows scrolling only inside the chart area */
+  
+
 }
+.teslsa{width:800px;  overflow: hidden; /* Allows scrolling only inside the chart area */
+  
+
+}
+/* For Webkit-based browsers (e.g., Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #151414; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #008cff; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+  border: 2px solid #f0f0f0; /* Adds a border for contrast */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #005bb5; /* Color when hovered */
+}
+

@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import axios from 'axios';
 import { JobContext } from './jobContext';
 import './job.css';
+import WeatherApp from './txtfiles/wet';
 
 const CombinedComponent = () => {
   const { jobs, loading } = useContext(JobContext);
@@ -62,11 +63,15 @@ const CombinedComponent = () => {
   return (
     <div className="news-listings">
       <div className="joiner">
-        <div><h1>Job Listings</h1></div>
+        <div>
+          <WeatherApp />
+          </div>
       
       </div>
       <div className="news-listingsjobs" style={{ padding: '20px' }}>
-        <div className="articles-containerjobs">
+      <h1 style={{color:"white", padding: "3px" }}>local jobs</h1>
+
+      <div className="articles-containerjobs">
           {data.map((item, index) => (
             <div key={index} className="articlejob" style={{ margin: '20px 0', border: '1px solid #ccc', borderRadius:'9px' ,padding: '10px' }}>
                <h2 className='job-title'>{item.job}</h2>

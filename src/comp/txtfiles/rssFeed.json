@@ -1,0 +1,27 @@
+{
+  "channel": {
+    "title": "3-Day Weather Forecast for Stornoway",
+    "link": "http://news.bbc.co.uk/weather/forecast/4197",
+    "description": "Latest weather updates for Stornoway.",
+    "items": [
+      {
+        "title": "Sunday: Light Rain",
+        "description": "High: 12°C, Low: 7°C. Light rain throughout the day. Winds: 10mph NE.",
+        "link": "http://news.bbc.co.uk/weather/forecast/4197/day1",
+        "pubDate": "Sat, 22 Mar 2025 06:00:00 GMT"
+      },
+      {
+        "title": "Monday: Cloudy",
+        "description": "High: 10°C, Low: 6°C. Mostly cloudy with occasional sunshine. Winds: 8mph NW.",
+        "link": "http://news.bbc.co.uk/weather/forecast/4197/day2",
+        "pubDate": "Sun, 23 Mar 2025 06:00:00 GMT"
+      },
+      {
+        "title": "Tuesday: Clear",
+        "description": "High: 14°C, Low: 8°C. Sunny all day with light winds. Winds: 5mph W.",
+        "link": "http://news.bbc.co.uk/weather/forecast/4197/day3",
+        "pubDate": "Mon, 24 Mar 2025 06:00:00 GMT"
+      }
+    ]
+  }
+}

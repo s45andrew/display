@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './todoList.css';
+import WeatherApp from './wet';
+
+//  https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2636790
 
 const TodoList = () => {
   const [tasks, setTasks] = useState(() => {
@@ -27,6 +30,11 @@ const TodoList = () => {
   };
 
   return (
+    <div>
+      <div className='weather'>
+        <WeatherApp />
+      </div>
+    
     <div className='todo'>
       <h2>still To-Do </h2>
       <div className="inputContainer">
@@ -49,6 +57,7 @@ const TodoList = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };

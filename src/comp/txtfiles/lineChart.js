@@ -134,19 +134,33 @@ const monthDifference = dataPoints.length > 20
 
   // Define the chart options
   const chartOptions = {
+    plugins: {
+      legend: {
+        display: false, // Remove the legend
+      },
+      title: {
+        display: true, // Enable the title
+        text: `${stName} Stock Prices`,
+        padding: {
+          top: 0, // Remove padding at the top of the title
+          bottom: 0, // Optional: Adjust bottom padding
+        },
+      },
+    },
     scales: {
       y: {
         min: yMin,
         max: yMax,
         ticks: {
           callback: function (value) {
-            return currencySymbol + value.toFixed(0); // Format with dynamic currency
+            return currencySymbol + value.toFixed(0); // Format values dynamically
           },
         },
       },
       x: {
         ticks: {
-          maxTicksLimit: 10, // Limit the number of x-axis ticks for better readability
+          maxTicksLimit: 10,
+          display: false, // Hide x-axis ticks
         },
       },
     },
