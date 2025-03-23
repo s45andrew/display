@@ -58,37 +58,53 @@ const Cabinet = () => {
         <>
           <div className="joinery">
             <div width="230px">
-              <Indices title="FTSE" data={loadedData[0]} />
-            </div>
+            {loadedData && loadedData[0] && loadedData[0].datasets && loadedData[0].datasets[0] && loadedData[0].datasets[0].data ? (
+  <Indices
+    title={`FTSE £ ${Math.round(loadedData[0].datasets[0].data.slice(-1)[0])}`}
+    data={loadedData[0]}
+  />
+) : (
+  <p>Data not available</p>
+)}
+</div>
             <div width="230px">
-              <Indices title="FTSE 250" data={loadedData[1]} />
-            </div>
+              <Indices title={`FTSE 250 £ ${Math.round(loadedData[1].datasets[0].data.slice(-1)[0])}`}
+                                   data={loadedData[1]}  /> </div>
           </div>
 
           <div className="joinery">
             <div width="230px">
-              <Indices title="Dow Jones" data={loadedData[2]} />
-            </div>
+              <Indices title={`DJ ind  $ ${Math.round(loadedData[2].datasets[0].data.slice(-1)[0])}`}
+                                   data={loadedData[2]}  /> </div>
             <div width="230px">
-              <Indices title="NasDaq" data={loadedData[3]} />
-            </div>
+              <Indices title={`NassDaq  $ ${Math.round(loadedData[3].datasets[0].data.slice(-1)[0])}`}
+                                   data={loadedData[3]}  /> </div>
           </div>
 
           <div className="joinery">
             <div width="230px">
-              <Indices title="BITCOIN" data={loadedData[4]} />
-            </div>
-            <div width="230px">
-              <Indices title="GOLD" data={loadedData[5]} />
-            </div>
+              <Indices  title={`₿itcoin  $ ${Math.round(loadedData[4].datasets[0].data.slice(-1)[0])}`}
+                                   data={loadedData[5]}  /> </div>
+            <div width="230px">₿,
+            <Indices
+                   title={`Gold $ ${Math.round(loadedData[5].datasets[0].data.slice(-1)[0])}`}
+                    data={loadedData[5]}  /> </div>
           </div>
           <div className="joinery">
-            <div width="230px">
-              <Indices title="£ vs €" data={loadedData[6]} />
-            </div>
-            <div width="230px">
-              <Indices title="£ vs $" data={loadedData[7]} />
-            </div>
+          <div width="230px">
+              <Indices
+                   title={`£ vs $ ${parseFloat(loadedData[6].datasets[0].data.slice(-1)[0]).toFixed(2)}`}
+                   data={loadedData[6]}  />
+           </div>
+           
+<div width= "220px" >
+  <Indices
+    title={`£ vs €  ${parseFloat(loadedData[7].datasets[0].data.slice(-1)[0]).toFixed(2)}`}
+    data={loadedData[7]}
+  />
+</div>
+
+
           </div>
         </>
       ) : (

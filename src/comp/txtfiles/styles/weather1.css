@@ -1,7 +1,7 @@
 /* General Page Styles */
 .weather-app {
     font-family: Arial, sans-serif;
-    background-color: #090a0b; /* Light background color for the page */
+    background-color: transparent; /* Light background color for the page */
     padding: 0px;
     text-align: center;
     color: #fbfbfb;
@@ -37,7 +37,7 @@
     padding-bottom: 0; /* Remove bottom padding */
     width: 90px;
     height: 190px; /* Fixed height for the card */
-    background-color: #090a0b;
+    background-color: transparent;
     text-align: center;
   }
   

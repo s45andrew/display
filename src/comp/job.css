@@ -74,16 +74,20 @@ body {
   .navigation-buttons button:focus {
     outline: none;
   }
-  .toggleReadMore{
-    color:#5edb24;
-    background-color: transparent;;
-    border-width: 0px;
+ 
+.toggleReadMore {
+  display: inline-block;
+  margin: 10px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.toggleReadMore:hover{
-  color: green;
-  outline: none;
-  background-color: transparent; /* Change this to your desired background color */
+.toggleReadMore:hover {
+  background-color: #0056b3;
 }
 .articles-container {
   display: flex;
