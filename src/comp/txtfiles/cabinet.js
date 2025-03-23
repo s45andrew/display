@@ -26,7 +26,9 @@ const Cabinet = () => {
         const data3 = (await fetchS3Data(process.env.REACT_APP_DOWJONES_DATA_URL)).slice(0,100).reverse();
         const data4 = (await fetchS3Data(process.env.REACT_APP_NASDAQ_DATA_URL)).slice(0,100).reverse();
         const data5 = (await fetchS3Data(process.env.REACT_APP_BITS2024_DATA_URL)).slice(0,100).reverse();
-        const data6 = (await fetchS3Data(process.env.REACT_APP_NASDAQ_DATA_URL)).slice(0,100).reverse();
+        const data6 = (await fetchS3Data(process.env.REACT_APP_GOLD_DATA_URL)).slice(-100);
+        const data7 = (await fetchS3Data(process.env.REACT_APP_DOLLAR_DATA_URL)).slice(-100);
+        const data8 = (await fetchS3Data(process.env.REACT_APP_EURO_DATA_URL)).slice(-100);
     
         // Transform data into Chart.js format
         setLoadedData([
@@ -36,6 +38,9 @@ const Cabinet = () => {
           { labels: data4.map(item => item.date), datasets: [{ data: data4.map(item => item.value) }] },
           { labels: data5.map(item => item.date), datasets: [{ data: data5.map(item => item.value) }] },
           { labels: data6.map(item => item.date), datasets: [{ data: data6.map(item => item.value) }] },
+          { labels: data7.map(item => item.date), datasets: [{ data: data7.map(item => item.value) }] },
+          { labels: data8.map(item => item.date), datasets: [{ data: data8.map(item => item.value) }] },
+        
         ]);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -75,6 +80,14 @@ const Cabinet = () => {
             </div>
             <div width="230px">
               <Indices title="GOLD" data={loadedData[5]} />
+            </div>
+          </div>
+          <div className="joinery">
+            <div width="230px">
+              <Indices title="£ vs €" data={loadedData[6]} />
+            </div>
+            <div width="230px">
+              <Indices title="£ vs $" data={loadedData[7]} />
             </div>
           </div>
         </>

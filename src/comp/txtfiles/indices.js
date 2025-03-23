@@ -14,6 +14,8 @@ ChartJS.register(
 
 const Indices = ({ title,data }) => {
  
+
+  
   const options = {
     responsive: true,
     plugins: {
