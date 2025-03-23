@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useMemo } from 'react';
 import { Line } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
+
 import LoadApp from '../../loader.js'; // Adjust the path as needed
 import './buttons.css';
 import { GlobalStateContext } from './GlobalStateContext';
@@ -251,13 +251,13 @@ const monthDifference = dataPoints.length > 20
         <div className="chart-container">
             <Line data={chartData} options={chartOptions} />
         </div>
-        <div className="button-container">Range : 
-        <button className={`butt ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>a day</button>
-        <button className={`butt ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
-        <button className={`butt ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
-        <button className={`butt ${activeButton === 240 ? 'active' : ''}`} onClick={() => duration(240)}>year</button>
-        <button className={`butt ${activeButton === 1000 ? 'active' : ''}`} onClick={() => duration(1000)}>Max</button>
-      </div>
+        <div className="button-container">
+        <button className={`roun-button ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>day</button>
+        <button className={`roun-button ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
+        <button className={`roun-button ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
+        <button className={`roun-button ${activeButton === 240 ? 'active' : ''}`} onClick={() => duration(240)}>year</button>
+        <button className={`roun-button ${activeButton === 1000 ? 'active' : ''}`} onClick={() => duration(1000)}>Max</button>
+      </div>  
     </div>
 </div>
 

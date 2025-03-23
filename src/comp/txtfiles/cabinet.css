@@ -9,6 +9,15 @@
       /* Allows scrolling only inside the chart area */
      
   }
+  .title {
+    color: blue; /* Style for the title */
+    font-weight: bold;
+  }
+  
+  .price {
+    color: green; /* Style for the price */
+  }
+  
   .containerCabinet {
     display: flex;  padding-right: 15px;
     align-items: center; /* Vertically aligns the h2 and buttons */
@@ -34,13 +43,96 @@
   .joinery div {
     width: 48%;margin-left:3px;
     height: 69%; /* Adjust dimensions as needed */
-    display: flex;
+    display: flex; color:white;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     border: 2px solid #363434; /* Adds a solid black border around each div */
     border-radius: 5px; /* Adds rounded corners (optional) */
-    padding: 4px; /* Adds spacing inside the border */
+    padding: 2px; /* Adds spacing inside the border */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth (optional) */
+  }
+  .joinery div .title {
+    color: blue !important; /* Force color with !important */
+    font-weight: bold;
+  }
+  .currency-symbol {
+    color: blue;
+  }
+  
+  .data-value {
+    color: green;
+  }
+  
+  .error-symbol {
+    color: gray;
+  }
+  
+  .error-value {
+    color: red;
+  }
+  
+  .cabinet {
+    /* Example styling for cabinet container */
+    padding: 20px;
+  }
+  
+  .containerCabinet {
+    /* Example styling for container */
+    display: flex;
+    align-items: center;
+  }
+  
+  .indy {
+    /* Example styling for header */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .joinery {
+    display: flex;
+    justify-content: space-between;
+  }
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Adjust position above the button */
+    left: 50%;
+    margin-left: -60px; /* Center the tooltip */
+    opacity: 0; /* Make it invisible initially */
+    transition: opacity 0.3s; /* Smooth fade-in */
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1; /* Fade-in effect on hover */
+  }
+  .round-button {
+    padding: 10px 20px;
+    border-radius: 50%;
+    background-color: #0078d7; /* Default color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px; /* Space between buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .round-button:hover {
+    background-color: #ffd700;
+    color : black; /* Slightly darker on hover */
+  }
+  
+  .round-button.is-active {
+    background-color: #1b6d31; /* Highlighted color for active button */
+    color: black; /* Adjust text color for readability */
   }
   
   

@@ -24,14 +24,22 @@ const Indices = ({ title,data }) => {
       },
       title: {
         display: true,
-        text: title, // Dynamic title
+        text: title,size: 18, color:'green', // Dynamic title
         padding: {
           top: 1, // Adjusts spacing above the title
           bottom: 0, // Optional: Adjust spacing below the title
         },
         font: {
-          size: 18, // Adjust the font size of the title (optional)
+          size: 18,// Adjust the font size of the title (optional)
         },
+      },
+    },
+    layout: {
+      padding: {
+        left: 1,  // Reduced left padding
+        right: 1, // Reduced right padding
+        top: 0,    // Keep top padding as is
+        bottom: 0, // Keep bottom padding as is
       },
     },
     scales: {
