@@ -11,11 +11,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-const Indices = ({ title,data }) => {
- 
-
-  
+const Indices = ({ title, data }) => {
   const options = {
     responsive: true,
     plugins: {
@@ -23,22 +19,23 @@ const Indices = ({ title,data }) => {
         display: false,
       },
       title: {
-        display: true,
-        text: title,size: 18, color:'green', // Dynamic title
+        display: true,color:'green',
+        text: title, // Dynamic title
         padding: {
           top: 1, // Adjusts spacing above the title
           bottom: 0, // Optional: Adjust spacing below the title
         },
         font: {
-          size: 18,// Adjust the font size of the title (optional)
+          size: 18, // Adjust the font size of the title
+          color: '#09a2ee',// Set the color of the title properly
         },
-      },
+      }
     },
     layout: {
       padding: {
-        left: 1,  // Reduced left padding
+        left: 1, // Reduced left padding
         right: 1, // Reduced right padding
-        top: 0,    // Keep top padding as is
+        top: 0, // Keep top padding as is
         bottom: 0, // Keep bottom padding as is
       },
     },
@@ -56,7 +53,16 @@ const Indices = ({ title,data }) => {
     },
   };
 
-  return <Line data={data} options={options} />;
-};
+  // Ensure borderColor is included in the dataset
+  const chartData = {
+    ...data,
+    datasets: data.datasets.map((dataset) => ({
+      ...dataset,
+      borderColor: dataset.borderColor || '#09a2ee', // Default to blue if not set
+      borderWidth: 1, // Default thickness
+    })),
+  };
 
+  return <Line data={chartData} options={options} />;
+};
 export default Indices;

@@ -51,10 +51,7 @@
     padding: 2px; /* Adds spacing inside the border */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth (optional) */
   }
-  .joinery div .title {
-    color: blue !important; /* Force color with !important */
-    font-weight: bold;
-  }
+
   .currency-symbol {
     color: blue;
   }
@@ -91,27 +88,6 @@
   .joinery {
     display: flex;
     justify-content: space-between;
-  }
-  .tooltip-text {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%; /* Adjust position above the button */
-    left: 50%;
-    margin-left: -60px; /* Center the tooltip */
-    opacity: 0; /* Make it invisible initially */
-    transition: opacity 0.3s; /* Smooth fade-in */
-  }
-  
-  .tooltip-container:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1; /* Fade-in effect on hover */
   }
   .round-button {
     padding: 10px 20px;
