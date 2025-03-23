@@ -55,7 +55,7 @@ const SportsFetcher = () => {
   }
 
   return (
-    <div className="news-listings" style={{ padding: '20px' }}>
+    <div className="football-listings" style={{ padding: '20px' }}>
  <div className="joiner">
    <div>
     <h1>Latest Stories</h1>

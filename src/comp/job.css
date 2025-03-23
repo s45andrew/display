@@ -2,7 +2,7 @@ body {
     margin: 3px;  /* Add margin to the body to move content away from the edge */
     padding: 7px;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
+    background: linear-gradient(to bottom, #090a0b, #000080, #090a0b);
   
       height: 100vh; /* Full screen height */
       margin: 0;
@@ -20,7 +20,7 @@ body {
   }
   .news-listings {
     margin: 1px;border-radius: 5px;
-    background: linear-gradient(to bottom, #090a0b, #000080, #001a82);
+    background: linear-gradient(to bottom, #090a0b, #121248, #090a0b);
   }
 .article{
   background-color: azure; margin-left: 7px;margin-right: 7px;

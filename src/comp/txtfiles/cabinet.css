@@ -1,42 +1,45 @@
 .cabinet {
-width:380px;
-    
-    background-color: rgb(4, 3, 3);
+   width:418px;
+   background-color: rgb(4, 3, 3);
      /* Creates inner depth with shading */
     border: 0px solid #3e3e3e; /* Outer border */
-   margin: 19px auto; /* Center on the page */
+   margin: 14px auto; /* Center on the page */
     border-radius: 10px; /* Rounded edges */
-    padding:12px;
-      overflow: hidden; /* Allows scrolling only inside the chart area */
-    
-    
-   
+    padding:8px;
+      /* Allows scrolling only inside the chart area */
+     
   }
+  .containerCabinet {
+    display: flex;  padding-right: 15px;
+    align-items: center; /* Vertically aligns the h2 and buttons */
+    justify-content: flex-end; /* Aligns all items to the right */
+    gap: 10px; /* Adds spacing between elements */
+}
   .indy {
-    color: rgb(224, 205, 159);
+    color: rgb(128, 117, 58);
     text-align: center; /* Centers text horizontally */
   }
   
   .cab {
     width: 300px; /* Same fixed width for all content */
-    padding-left : 22px;
+    padding-left : 5px;
   }
   
   .joinery {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;padding:3px;
+    gap: 10px;padding:3px;
   }
   .joinery div {
-    width: 48%;margin-left:5px;
-    height: 65%; /* Adjust dimensions as needed */
+    width: 48%;margin-left:3px;
+    height: 69%; /* Adjust dimensions as needed */
     display: flex;
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     border: 2px solid #363434; /* Adds a solid black border around each div */
     border-radius: 5px; /* Adds rounded corners (optional) */
-    padding: 10px; /* Adds spacing inside the border */
+    padding: 4px; /* Adds spacing inside the border */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth (optional) */
   }
   

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./cabinet.css";
 import Indices from "./indices";
-
+import RoundButton from './roundButton';
 const Cabinet = () => {
   const [loadedData, setLoadedData] = useState(null);
 
@@ -47,7 +47,8 @@ const Cabinet = () => {
 
   return (
     <div className="cabinet">
-      <h2 className="indy">Indices</h2>
+      <div className='containerCabinet'><h2 className="indy">Indices</h2><RoundButton text='3'/><RoundButton text='6'/> <RoundButton text='12'/>
+</div>
       {loadedData ? (
         <>
           <div className="joinery">

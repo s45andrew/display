@@ -36,7 +36,7 @@
     padding: 6px; /* General padding */
     padding-bottom: 0; /* Remove bottom padding */
     width: 90px;
-    height: 160px; /* Fixed height for the card */
+    height: 190px; /* Fixed height for the card */
     background-color: #090a0b;
     text-align: center;
   }
