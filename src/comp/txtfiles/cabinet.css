@@ -2,7 +2,7 @@
    width:418px;
    background-color: rgb(4, 3, 3);
      /* Creates inner depth with shading */
-    border: 0px solid #3e3e3e; /* Outer border */
+    border: 0px solid  rgb(4, 3, 3); /* Outer border */
    margin: 14px auto; /* Center on the page */
     border-radius: 10px; /* Rounded edges */
     padding:8px;

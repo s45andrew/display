@@ -42,11 +42,14 @@ const Cabinet = () => {
           .slice(0, durations)
           .reverse();
         const data6 = (await fetchS3Data(process.env.REACT_APP_GOLD_DATA_URL))
-          .slice(-durations);
+        .slice(0, durations)
+        .reverse();
         const data7 = (await fetchS3Data(process.env.REACT_APP_DOLLAR_DATA_URL))
-          .slice(-durations);
+        .slice(0, durations)
+        .reverse();
         const data8 = (await fetchS3Data(process.env.REACT_APP_EURO_DATA_URL))
-          .slice(-durations);
+        .slice(0, durations)
+          .reverse();
 
         // Transform data into Chart.js format
         setLoadedData([
