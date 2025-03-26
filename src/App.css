@@ -19,7 +19,7 @@ body, html, #root {
   flex-wrap: wrap;
    /* Consistent spacing between elements */
   width: 10%;
-  height: auto; /* Adapts to the content height without collapsing */
+  height: 600px; /* Adapts to the content height without collapsing */
   justify-content: center; /* Centers the child content */
   align-items: flex-start; /* Aligns items to the top */
   padding: 2px;

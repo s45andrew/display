@@ -36,7 +36,7 @@
   
   .joinery {
     flex: 1 1 48%; /* Each div takes 48% of parent width, adjusts based on space */
-min-height: 200px; /* Stabilizes height */
+min-height: 120px; /* Stabilizes height */
     /* Keep styling stable */
     box-sizing: border-box; /* Prevents padding from affecting size */
   margin : 3px;
@@ -44,7 +44,7 @@ min-height: 200px; /* Stabilizes height */
   
   .joinery div {
      /* Accounts for margin to prevent overflow */
-    height: 150px; /* Fixed height prevents dynamic resizing issues */
+    height: 130px; /* Fixed height prevents dynamic resizing issues */
     width:200px;display: flex;
     color: white;
     justify-content: center; 

@@ -11,7 +11,8 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-const Indices = ({ title, data }) => {
+
+const Indices = ({ title, data, customText }) => {
   const options = {
     responsive: true,
     plugins: {
@@ -19,50 +20,83 @@ const Indices = ({ title, data }) => {
         display: false,
       },
       title: {
-        display: true,color:'green',
+        display: true,
         text: title, // Dynamic title
         padding: {
-          top: 1, // Adjusts spacing above the title
-          bottom: 0, // Optional: Adjust spacing below the title
+          top: 1,
+          bottom: 0,
         },
         font: {
-          size: 18, // Adjust the font size of the title
-          color: '#09a2ee',// Set the color of the title properly
+          size: 18,
         },
-      }
+        color: 'green', // Set the title color properly
+      },
     },
     layout: {
       padding: {
-        left: 1, // Reduced left padding
-        right: 1, // Reduced right padding
-        top: 0, // Keep top padding as is
-        bottom: 0, // Keep bottom padding as is
+        left: 1,
+        right: 1,
+        top: 0,
+        bottom: 0,
       },
     },
     scales: {
       x: {
         ticks: {
-          display: false, // Hide x-axis labels
+          display: false,
         },
       },
       y: {
         ticks: {
-          display: false, // Hide y-axis labels
+          display: false,
         },
       },
     },
   };
 
-  // Ensure borderColor is included in the dataset
+  const chartPlugins = [
+    {
+      id: 'customTextPlugin',
+      beforeDraw: (chart) => {
+        const { ctx } = chart;
+        ctx.save();
+  
+        if (customText) {
+          const numericValue = parseFloat(customText); // Ensure it's a number
+          const isPositive = numericValue > 0; // Check if the value is positive
+          const arrowSymbol = isPositive ? '↑' : '↓'; // Arrow based on positivity
+          const arrowColor = isPositive ? 'green' : 'red'; // Color based on positivity
+  
+          // Styling
+          ctx.font = '16px Arial';
+          ctx.fillStyle = arrowColor; // Use the arrow color
+          ctx.textAlign = 'center';
+  
+          // Prepare text with arrow
+          const displayText = `${arrowSymbol} ${Math.abs(numericValue)}`; // Display value with absolute for clarity
+  
+          // Positioning
+          const centerX = chart.width / 4;
+          const centerY = chart.height / 2 + 50; // Below the chart center
+          ctx.fillText(displayText, centerX, centerY); // Render the text with arrow
+        }
+  
+        ctx.restore();
+      },
+    },
+  ];
+  
+  
   const chartData = {
     ...data,
     datasets: data.datasets.map((dataset) => ({
       ...dataset,
-      borderColor: dataset.borderColor || '#09a2ee', // Default to blue if not set
-      borderWidth: 1, // Default thickness
+      borderColor: dataset.borderColor || '#09a2ee',
+      borderWidth: 1,
     })),
   };
 
-  return <Line data={chartData} options={options} />;
+  return <Line data={chartData} options={options} plugins={chartPlugins} />;
 };
+
 export default Indices;

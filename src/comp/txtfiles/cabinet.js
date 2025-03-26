@@ -106,63 +106,83 @@ const Cabinet = () => {
       {loadedData ? (
         <>
           <div className="joinery">
-            <div width="230px">
+            <div >
               {loadedData && loadedData[0] && loadedData[0].datasets && loadedData[0].datasets[0] && loadedData[0].datasets[0].data ? (
-                <Indices
-                  title={`${titles[0]} £ ${Math.round(loadedData[0].datasets[0].data.slice(-1)[0])}`}
+                
+                <Indices title={`${titles[0]}  -  £ ${parseFloat(loadedData[0].datasets[0].data.slice(-1)[0]).toFixed(0)}`}
                   data={loadedData[0]}
-                />
+                  customText={`${(
+                    parseFloat(loadedData[0].datasets[0].data.slice(-1)[0]) -
+                    parseFloat(loadedData[0].datasets[0].data.slice(-2, -1)[0])
+                  ).toFixed(0)}`} />
+
               ) : (
                 <p>Data not available</p>
               )}
             </div>
-            <div width="230px">
-              <Indices
-                title={`${titles[1]} £ ${Math.round(loadedData[1].datasets[0].data.slice(-1)[0])}`}
-                data={loadedData[1]}
-              />
+            <div>
+            <Indices title={`${titles[1]}  -  £ ${parseFloat(loadedData[1].datasets[0].data.slice(-1)[0]).toFixed(0)}`}
+  data={loadedData[1]}
+  customText={`${(
+      parseFloat(loadedData[1].datasets[0].data.slice(-1)[0]) -
+      parseFloat(loadedData[1].datasets[0].data.slice(-2, -1)[0])
+    ).toFixed(0)}`} />
             </div>
           </div>
           <div className="joinery">
-            <div width="230px">
-              <Indices
-                title={`${titles[2]} $ ${Math.round(loadedData[2].datasets[0].data.slice(-1)[0])}`}
-                data={loadedData[2]}
-              />
+            <div>
+           <Indices  title={`${titles[2]}  -  $ ${parseFloat(loadedData[2].datasets[0].data.slice(-1)[0]).toFixed(0)}`}
+  data={loadedData[2]}
+  customText={`${(
+    parseFloat(loadedData[2].datasets[0].data.slice(-1)[0]) -
+    parseFloat(loadedData[2].datasets[0].data.slice(-2, -1)[0])
+  ).toFixed(0)}`} />
             </div>
-            <div width="230px">
-              <Indices
-                title={`${titles[3]} $ ${Math.round(loadedData[3].datasets[0].data.slice(-1)[0])}`}
-                data={loadedData[3]}
-              />
-            </div>
-          </div>
-          <div className="joinery">
-            <div width="230px">
-              <Indices
-                title={`${titles[4]}  $ ${Math.round(loadedData[4].datasets[0].data.slice(-1)[0])}`}
-                data={loadedData[4]}
-              />
-            </div>
-            <div width="230px">
-              <Indices
-                title={`${titles[5]} $ ${Math.round(loadedData[5].datasets[0].data.slice(-1)[0])}`}
-                data={loadedData[5]}
-              />
+            <div>
+          <Indices   title={`${titles[3]}  -  $ ${parseFloat(loadedData[3].datasets[0].data.slice(-1)[0]).toFixed(0)}`}
+  data={loadedData[3]}
+  customText={`${(
+    parseFloat(loadedData[3].datasets[0].data.slice(-1)[0]) -
+    parseFloat(loadedData[3].datasets[0].data.slice(-2, -1)[0])
+  ).toFixed(0)}`} />
             </div>
           </div>
           <div className="joinery">
-            <div width="230px">
-              <Indices
-                title={`${titles[6]} ${parseFloat(loadedData[6].datasets[0].data.slice(-1)[0]).toFixed(2)}`}
-                data={loadedData[6]}
-              />
+            <div>
+           <Indices  title={`${titles[4]}  -  $ ${parseFloat(loadedData[4].datasets[0].data.slice(-1)[0]).toFixed(0)}`}
+  data={loadedData[4]}
+   customText={`${(
+    parseFloat(loadedData[4].datasets[0].data.slice(-1)[0]) -
+    parseFloat(loadedData[4].datasets[0].data.slice(-2, -1)[0])
+  ).toFixed(0)}`} />
             </div>
-            <div width="220px">
-              <Indices
-                title={`${titles[7]} ${parseFloat(loadedData[7].datasets[0].data.slice(-1)[0]).toFixed(2)}`}
-                data={loadedData[7]}
-              />
+            <div>
+           <Indices title={`${titles[5]}  -  $ ${parseFloat(loadedData[5].datasets[0].data.slice(-1)[0]).toFixed(0)}`}
+  data={loadedData[5]}
+  customText={`${(
+    parseFloat(loadedData[5].datasets[0].data.slice(-1)[0]) -
+    parseFloat(loadedData[5].datasets[0].data.slice(-2, -1)[0])
+  ).toFixed(0)}`}/>
+            </div>
+          </div>
+          <div className="joinery">
+            <div >
+            <Indices title={`${titles[6]}  -  ${parseFloat(loadedData[6].datasets[0].data.slice(-1)[0]).toFixed(4)}`}
+  data={loadedData[6]}
+  customText={`${(
+    parseFloat(loadedData[6].datasets[0].data.slice(-1)[0]) -
+    parseFloat(loadedData[6].datasets[0].data.slice(-2, -1)[0])
+  ).toFixed(4)}`} />
+            </div>
+            <div >
+            <Indices
+  title={`${titles[7]}  -  ${parseFloat(loadedData[7].datasets[0].data.slice(-1)[0]).toFixed(4)}`}
+  data={loadedData[7]}
+  customText={`${(
+    parseFloat(loadedData[7].datasets[0].data.slice(-1)[0]) -
+    parseFloat(loadedData[7].datasets[0].data.slice(-2, -1)[0])
+  ).toFixed(4)}`}
+/>
             </div>
           </div>
         </>
