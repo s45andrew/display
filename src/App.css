@@ -72,6 +72,16 @@ body, html, #root {
   background-color: rgb(75, 121, 219);
   color: gold;border-radius: 5px;
 }
+.straight {
+  display: flex;
+  flex-wrap: wrap; /* Allows children to wrap if there isn't enough space */
+  width: 100%; /* Ensure it uses full available width */
+  gap: 10px; /* Spacing between child elements */
+  padding: 10px; /* Space inside the container */
+  box-sizing: border-box; 
+  overflow: hidden; /* Prevent content overflow */
+}
+
 
 .nav-buttons button:focus {
   outline: none;

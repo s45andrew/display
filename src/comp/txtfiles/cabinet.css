@@ -35,23 +35,28 @@
   }
   
   .joinery {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;padding:3px;
+    flex: 1 1 48%; /* Each div takes 48% of parent width, adjusts based on space */
+    min-width: 230px; /* Ensures minimum size */
+    max-width: calc(50% - 10px); /* Accounts for gap between divs */
+    min-height: 200px; /* Stabilizes height */
+    border: 2px solid #363434; /* Keep styling stable */
+    box-sizing: border-box; /* Prevents padding from affecting size */
   }
+  
   .joinery div {
-    width: 48%;margin-left:3px;
-    height: 69%; /* Adjust dimensions as needed */
-    display: flex; color:white;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    border: 2px solid #363434; /* Adds a solid black border around each div */
-    border-radius: 5px; /* Adds rounded corners (optional) */
-    padding: 2px; /* Adds spacing inside the border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth (optional) */
+    width: calc(48% - 6px); /* Accounts for margin to prevent overflow */
+    height: 200px; /* Fixed height prevents dynamic resizing issues */
+    display: flex;
+    color: white;
+    justify-content: center; 
+    align-items: center; 
+    border: 2px solid #363434; 
+    border-radius: 5px; 
+    padding: 5px; /* Slightly increased for better spacing */
+    box-sizing: border-box; /* Ensures padding doesn’t affect width/height */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
-
+  
   .currency-symbol {
     color: blue;
   }
