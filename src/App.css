@@ -5,14 +5,24 @@ body, html, #root {
  
 }
 .together {
-  display: flex; /* Enables flexbox */
-  /* Distributes space between the two divs */
-  align-items: center; /* Vertically aligns the divs */
- /* Allows scrolling only inside the chart area */
-  
-  
+  display: flex;
+  flex-direction: row; /* Stacks child elements vertically */
+  width: 100%; /* Full width of the container */
+   /* Prevents collapsing */
+  overflow: auto; /* Allows scrolling if content exceeds container height */
+  box-sizing: border-box;
 }
-.stright{ padding-right:14px;  /* Allows scrolling only inside the chart area */
+
+
+.straight {
+  display: flex;
+  flex-wrap: wrap;
+   /* Consistent spacing between elements */
+  width: 10%;
+  height: auto; /* Adapts to the content height without collapsing */
+  justify-content: center; /* Centers the child content */
+  align-items: flex-start; /* Aligns items to the top */
+  padding: 2px;
 }
 
 
@@ -40,7 +50,7 @@ body, html, #root {
 .myNavbar {
   flex: 0 0 auto;
   height:7%;
-  background-color: #090a0b;
+  background-color:  #090a0b;
 }
 
 
@@ -72,15 +82,7 @@ body, html, #root {
   background-color: rgb(75, 121, 219);
   color: gold;border-radius: 5px;
 }
-.straight {
-  display: flex;
-  flex-wrap: wrap; /* Allows children to wrap if there isn't enough space */
-  width: 100%; /* Ensure it uses full available width */
-  gap: 10px; /* Spacing between child elements */
-  padding: 10px; /* Space inside the container */
-  box-sizing: border-box; 
-  overflow: hidden; /* Prevent content overflow */
-}
+
 
 
 .nav-buttons button:focus {
