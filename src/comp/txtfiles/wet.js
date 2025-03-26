@@ -13,7 +13,8 @@ const WeatherApp = () => {
     "Light Rain": "sunRain.png",
     "Heavy Rain": "torrential.png",
     "Clear Night": "clearN.png",
-    "Partlu Cloudy": "CCC.png"
+    "Partlu Cloudy": "CCC.png",
+    "Light Rain Showers": "l_rain_showers.png"
     // Add more mappings as needed
   };
 
