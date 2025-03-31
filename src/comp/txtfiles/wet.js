@@ -7,7 +7,9 @@ const WeatherApp = () => {
 
   // Mapping descriptions to images
   const weatherIcons = {
-    "Sunny": "sunFULL.png",
+    "Sunny": "sunny.png",
+    "Drizzle":"lcloud.png",
+    "Light Drizzle":"lcloud.png",
     "Sunny Intervals": "sunC.png",
     "Light Cloud": "lightcloud.png",
     "Light Rain": "sunRain.png",
