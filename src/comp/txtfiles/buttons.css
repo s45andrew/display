@@ -5,6 +5,59 @@
     flex-wrap: wrap;
     justify-content: center; /* Center align the buttons */
  }
+
+ 
+ .flex-containerC {
+  display: flex;
+  flex-direction: row; /* Arrange rows-container and close-column horizontally */
+}
+
+.rows-containerC {
+  display: flex;
+  flex-direction: column; /* Arrange rows vertically */
+  flex-grow: 1; /* Allow rows-container to take up available space */
+}
+.stockpickertitle{ text-align: center;}
+.closebutton{ height:100%;width: 100%;
+    font-size:18; font-weight:  bolder;color:aliceblue;
+    background-color: #0f0e0e;}
+.closebutton:hover{ font-size:21; color:rgb(96, 96, 93);
+    background-color: #faf777; font-weight: bolder;}
+    .returnbutton {
+        height: 50px;
+        width: 100px;
+        background-color: #b0cdd7;
+        color: rgb(33, 76, 114);
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      
+      .returnbutton:hover {
+        background-color: #ea8484;
+        color: #005fa3;
+      }
+      
+.rowC {
+  flex: 1; /* Make each row equal height */
+  
+  background-color: #0f0e0e; /* Optional styling */
+   /* Optional: Add borders for rows */
+}
+ /* 
+ /*.close-column {
+  /*   margin-left: 4px;
+  /*   width: 22px; /* Adjust width for a wider column */
+  /*   border-left: 2px solid transparent; /* Ensure border-left is properly styled */
+  /*   writing-mode: vertical-lr; /* Display text vertically */
+   /*  text-align: center; /* Center text horizontally */
+   /*  background-color: #0e0e0e; /* Background color */
+   /*  font-size: 16px; /* Increase font size */
+   /*  font-weight: bold; /* Make text bolder */
+   /*   padding-left: 1px; /* Add some padding */
+  
+   
+  
  .chartspliter {
     display: flex;
 }

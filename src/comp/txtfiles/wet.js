@@ -15,6 +15,7 @@ const WeatherApp = () => {
     "Light Rain": "sunRain.png",
     "Heavy Rain": "torrential.png",
     "Clear Night": "clearN.png",
+    "Clear Sky": "clearN.png",
     "Partlu Cloudy": "CCC.png",
     "Light Rain Showers": "l_rain_showers.png"
     // Add more mappings as needed
@@ -62,8 +63,9 @@ const WeatherApp = () => {
             const weatherIcon = weatherIcons[weatherDescription] || "default.png"; // Match image or fallback to default
 
             return (
+
               <div key={index} className="weather-card">
-                <h2>{titleParts[0] || 'No Day Found'}</h2> {/* Extract and display the day */}
+                <h5>{titleParts[0] || 'No Day Found'}</h5> {/* Extract and display the day */}
                 <div className="weatherImg">
                   <img src={`/${weatherIcon}`} alt={weatherDescription} /> {/* Dynamically set the image */}
                 </div>

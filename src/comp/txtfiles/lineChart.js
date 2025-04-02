@@ -19,7 +19,7 @@ const LineChart = () => {
   const [lineColor, setLineColor] = useState('rgba(75,192,192,1)'); // Default color
   const defaultSpread = 20; // Default duration for a month
   const [currencySymbol, setCurrencySymbol] = useState('$'); // Default to US currency
-
+  const [isVisible, setIsVisible] = useState(true); // State to control visibility
 
   useEffect(() => {
     if (loadedData.length > 0) {
@@ -182,8 +182,11 @@ const monthDifference = dataPoints.length > 20
     activateButton(event.target);
   };
   
-  
-
+  const  hidestock = () => {
+    if(isVisible){  setIsVisible(false); }
+    else {setIsVisible(true); }// Hide the stockpicker div
+  };
+ 
   function activateButton(button) {
     // Remove 'active' class from all buttons
     var buttons = document.querySelectorAll('.button-54');
@@ -201,31 +204,60 @@ const monthDifference = dataPoints.length > 20
   
   return (
     <div className='bbody'>
+
       {/* LoadApp component to load data */}
       <LoadApp onDataLoaded={setLoadedData} />
+ 
+
+      {isVisible ? ( 
+    <div className="flex-containerC">
+   
+    <div className="rows-containerC">
+    <div><h3 className='stockpickertitle'> Stock Picker</h3></div>
+    
+     <div className="rowC">
       <div className="row">
-        <button className="button-54 tesco" onClick={(event) => handleClick(event, 15, 'tesco', 'rgb(34, 43, 165)')}>Tesco</button>
-        <button className="button-54 Shell" onClick={(event) => handleClick(event, 16, 'Shell', 'rgb(244, 255, 88)')}> Shell </button>
-        <button className="button-54 GlenCore" onClick={(event) => handleClick(event, 13, 'GlenCore', 'rgb(43, 29, 245)')}>GlenCore</button>
-        <button className="button-54 EasyJet" onClick={(event) => handleClick(event, 12, 'EasyJet', 'rgb(250, 203, 17)')}>EasyJet</button>
-        <button className="button-54 AstrZenica" onClick={(event) => handleClick(event,11, 'AstraZeneca', 'rgba(255,153,153,1)')}>AstraZeneca</button>
-        <button className="button-54 Rolls-Royce" onClick={(event) => handleClick(event, 14, 'rolls-royce','silver')}>Rolls Royce</button>
-      </div>
+      
+      <button className="button-54 tesco" onClick={(event) => handleClick(event, 15, 'tesco', 'rgb(34, 43, 165)')}>Tesco</button>
+      <button className="button-54 Shell" onClick={(event) => handleClick(event, 16, 'Shell', 'rgb(244, 255, 88)')}> Shell </button>
+      <button className="button-54 GlenCore" onClick={(event) => handleClick(event, 13, 'GlenCore', 'rgb(43, 29, 245)')}>GlenCore</button>
+      <button className="button-54 EasyJet" onClick={(event) => handleClick(event, 12, 'EasyJet', 'rgb(250, 203, 17)')}>EasyJet</button>
+      <button className="button-54 AstrZenica" onClick={(event) => handleClick(event,11, 'AstraZeneca', 'rgba(255,153,153,1)')}>AstraZeneca</button>
+</div>
+   </div>
+      <div className="rowC">
       <div className="row">
         <button className="button-54 amazon" onClick={(event) => handleClick(event, 7, 'Amazon', 'rgb(153, 236, 255)')}>Amazon</button>
         <button className="button-54 AMD" onClick={(event) => handleClick(event, 8, 'AMD', 'rgb(244, 68, 9)')}> AMD </button>
         <button className="button-54 netflix" onClick={(event) => handleClick(event, 9, 'NetFlix', 'rgb(43, 29, 245)')}>NetFlix</button>
-        <button className="button-54 xeonn" onClick={(event) => handleClick(event, 10, 'Exxon', 'rgb(26, 20, 0)')}>Exxon</button>
-        <button className="button-54 ftse" onClick={(event) => handleClick(event, 0, 'FTSE', 'rgba(255,153,153,1)')}>FTSE</button>
-        <button className="button-54 tesla" onClick={(event) => handleClick(event, 1, 'Tesla', 'rgb(3, 25, 48)')}>Tesla</button>
+        <button className="button-54 xeonn" onClick={(event) => handleClick(event, 10, 'Exxon', 'rgb(247, 192, 9)')}>Exxon</button>
+        <button className="button-54 tesla" onClick={(event) => handleClick(event, 1, 'Tesla', 'rgb(253, 19, 222)')}>Tesla</button>
       </div>
+</div>
+      <div className="rowC">
       <div className="row">
+      <button className="button-54 Rolls-Royce" onClick={(event) => handleClick(event, 14, 'rolls-royce','silver')}>Rolls Royce</button>
         <button className="button-54 chipotle" onClick={(event) => handleClick(event, 2, 'cmg', 'rgb(245, 137, 29)')}>Chipotle</button>
-        <button className="button-54 bitcoin" onClick={(event) => handleClick(event, 3, 'Bitcoin', 'rgba(255,204,255,1)')}>Bitcoin</button>
-        <button className="button-54 apple" onClick={(event) => handleClick(event, 4, 'Apple', 'rgba(204,255,153,1)')}>Apple</button>
+      <button className="button-54 apple" onClick={(event) => handleClick(event, 4, 'Apple', 'rgba(204,255,153,1)')}>Apple</button>
         <button className="button-54 microsoft" onClick={(event) => handleClick(event, 5, 'Microsoft', 'rgb(117, 12, 68)')}>Microsoft</button>
         <button className="button-54 nvidia" onClick={(event) => handleClick(event, 6, 'Nvidia', 'rgba(204,204,204,1)')}>Nvidia</button>
         </div>
+   </div>
+    </div>
+    <div className="close-column"><button className="closebutton"onClick={hidestock}>
+     <br />C<br />L<br />O<br />S<br />E </button>
+    </div>
+  </div>
+   ) : ( // Display another div when stock picker is hidden
+    <div className="another-div">
+      <h3>The stock picker is now hidden!</h3>
+      <p>Welcome to the alternate view!</p> <button className="returnbutton" onClick={hidestock}>
+        RETURN
+      </button>
+    </div>
+  )}
+
+     
       <h3>{stName}  {currencySymbol} {price} . . </h3>
       <div className='chartspliter'>
       <div className='left-column'>
