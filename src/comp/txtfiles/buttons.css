@@ -95,6 +95,27 @@
     font-weight: bold; /* Emphasize the active button */
   }
   
+  .sroun-button {
+    padding: 4px 8px;
+    border-radius: 50%;
+    background-color: #222323; /* Default color */
+    color: rgb(92, 90, 90);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top:2px;margin-bottom:2px; /* Spacing between buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .sroun-button:hover {
+    background-color: #005fa3;  color: rgb(4, 3, 3); font-weight: bold;/* Slightly darker on hover */
+  }
+  
+  .sroun-button.active {
+    background-color: rgb(61, 144, 45); /* Highlight the active button */
+    color: black; /* Adjust text color for better readability */
+    font-weight: bold; /* Emphasize the active button */
+  }
 .left-column span {
     display: inline-block;white-space: nowrap; 
     margin: 2px 0; /* Minimal vertical spacing */

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useMemo } from 'react';
+import React, { useState, useContext, useEffect, useMemo, use } from 'react';
 import { Line } from 'react-chartjs-2';
 
 import LoadApp from '../../loader.js'; // Adjust the path as needed
@@ -10,17 +10,18 @@ const LineChart = () => {
     
   const [activeButton, setActiveButton] = useState(20);
   const [xAxisLabels, setXAxisLabels] = useState([]);
-  const [stName, setStName] = useState('FTSE');
+  const [stName, setStName] = useState('Tesla');
   const [dataPoints, setDataPoints] = useState([]);
   const [tempPoints, setTempPoints] = useState([]);
   const [tempX, setTempX] = useState([]);
   const [loadedData, setLoadedData] = useState([]);
-  const [currentDataset, setCurrentDataset] = useState(0); // Track the current dataset
+  const [currentDataset, setCurrentDataset] = useState(1); // Track the current dataset
   const [lineColor, setLineColor] = useState('rgba(75,192,192,1)'); // Default color
   const defaultSpread = 20; // Default duration for a month
   const [currencySymbol, setCurrencySymbol] = useState('$'); // Default to US currency
   const [isVisible, setIsVisible] = useState(true); // State to control visibility
-
+  const [average,setAverage]=useState(0); const [above,setAbove]=useState(0);const [below,setBelow]=useState(0);
+  const [month,setMonth]=useState('month')
   useEffect(() => {
     if (loadedData.length > 0) {
       const data1 = loadedData[currentDataset]; // Ensure the correct dataset is fetched
@@ -123,7 +124,7 @@ const monthDifference = dataPoints.length > 20
           label: `${stName} Stock Prices`,
           data: tempPoints,
           fill: false,
-          backgroundColor: 'rgba(75,192,192,0.2)',
+          backgroundColor: 'rgba(9, 29, 29, 0.2)',
           borderColor: lineColor, // Use the current line color
           tension: 0.1,
         },
@@ -186,7 +187,15 @@ const monthDifference = dataPoints.length > 20
     if(isVisible){  setIsVisible(false); }
     else {setIsVisible(true); }// Hide the stockpicker div
   };
- 
+  const analysis = (num) => {
+    const aver = tempPoints.reduce((sum, value) => sum + value, 0) / tempPoints.length;
+    setAverage(aver);
+    const aboveAverageCount = tempPoints.filter((value) => value > aver).length;
+    const belowAverageCount = tempPoints.filter((value) => value < aver).length;
+    setBelow(belowAverageCount); setAbove(aboveAverageCount)
+    if (num === 1) {      setMonth("month");
+    } else if (num === 3) {      setMonth("last 3 months");     } else if (num === 6) {      setMonth("last 6 months");   } else if (num === 12){      setMonth("past year");     }
+  };
   function activateButton(button) {
     // Remove 'active' class from all buttons
     var buttons = document.querySelectorAll('.button-54');
@@ -194,7 +203,7 @@ const monthDifference = dataPoints.length > 20
         btn.classList.remove('active');
     });
 
-    // Add 'active' class to the clicked button
+     // Add 'active' class to the clicked button
     button.classList.add('active');
   }
   const dayStyle = { color: parseFloat(dayDifference) > 0 ? 'green' : 'red' };
@@ -213,7 +222,7 @@ const monthDifference = dataPoints.length > 20
     <div className="flex-containerC">
    
     <div className="rows-containerC">
-    <div><h3 className='stockpickertitle'> Stock Picker</h3></div>
+    <div><h3 className='stockpickertitle'> {stName}  {currencySymbol} {price}     Analysis</h3></div>
     
      <div className="rowC">
       <div className="row">
@@ -250,7 +259,17 @@ const monthDifference = dataPoints.length > 20
   </div>
    ) : ( // Display another div when stock picker is hidden
     <div className="another-div">
-      <h3>The stock picker is now hidden!</h3>
+     
+      <div className="button-container"> <h3>The stock picker is now hidden!</h3>
+    
+
+        <button className={`sroun-button ${activeButton === 20 ? 'active' : ''}`} onClick={() => {duration(20);analysis(1);}}>1</button>
+        <button className={`sroun-button ${activeButton === 63 ? 'active' : ''}`} onClick={() => {duration(63);analysis(3);}}>3</button>
+        <button className={`sroun-button ${activeButton === 125 ? 'active' : ''}`} onClick={() => {duration(125);analysis(6);}}>6</button>
+        <button className={`sroun-button ${activeButton === 250 ? 'active' : ''}`} onClick={() => {duration(250);analysis(12);}}>12</button>
+      </div>  
+      <p>      <h4>{stName}  {currencySymbol} {price} the average price {currencySymbol} {average.toFixed(2)} over {month}</h4>
+       days below average {below} and over {above} days</p>
       <p>Welcome to the alternate view!</p> <button className="returnbutton" onClick={hidestock}>
         RETURN
       </button>
@@ -287,7 +306,7 @@ const monthDifference = dataPoints.length > 20
         <button className={`roun-button ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>day</button>
         <button className={`roun-button ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
         <button className={`roun-button ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
-        <button className={`roun-button ${activeButton === 240 ? 'active' : ''}`} onClick={() => duration(240)}>year</button>
+        <button className={`roun-button ${activeButton === 250 ? 'active' : ''}`} onClick={() => duration(250)}>year</button>
         <button className={`roun-button ${activeButton === 1000 ? 'active' : ''}`} onClick={() => duration(1000)}>Max</button>
       </div>  
     </div>
