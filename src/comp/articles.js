@@ -53,9 +53,7 @@ const S3DataFetcher = () => {
   return (
   <div className="joiner">
     <div className="news-listings">
-      <div className="joiner">
-        <h1>Local News</h1>
-      </div>
+     
       {data.length > 0 ? (
         <div className="articles-container">
           {data.map((item, index) => (

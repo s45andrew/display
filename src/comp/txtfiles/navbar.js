@@ -57,7 +57,7 @@ const Navbar = () => {
                   opacity: buttonStates.buttonJobData ? 1 : 0.3,
                 }}
               />
-              Jobs
+              Local News
             </button>
           </NavLink>
 
@@ -73,7 +73,7 @@ const Navbar = () => {
                   opacity: buttonStates.buttonLocalNews ? 1 : 0.3,
                 }}
               />
-              Articles
+              Ack
             </button>
           </NavLink>
 

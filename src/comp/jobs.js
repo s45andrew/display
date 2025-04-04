@@ -65,10 +65,9 @@ const CombinedComponent = () => {
       <div className="joiner">
         <div>
           <WeatherApp />
-          </div>
-      
+          </div>      
       </div>
-      <div className="news-listingsjobs" style={{ padding: '20px' }}>
+      <div className="news-listingsjobs" style={{ padding: '10px' }}>
       <h1 style={{color:"white", padding: "3px" }}>local jobs</h1>
 
       <div className="articles-containerjobs">

@@ -4,6 +4,15 @@
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
+span {
+  display: flex; /* Allows inline elements to align side-by-side */
+  align-items: center; /* Centers content vertically */
+  gap: 35px; /* Adds spacing between the image and the heading */
+}
+
+
+
+
 .image-containeru {
   position: relative;
   float: right; /* Positions the image on the far left */

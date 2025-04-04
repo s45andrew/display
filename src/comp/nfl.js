@@ -62,23 +62,10 @@ const NFL = () => {
   }, []);
 
   return (
-    <div className='football'>
-      <h1>NFL Latest</h1>
-      {error ? (
-        <h3>{error}</h3>
-      ) : (
-        articles.map((article, index) => (
-          <div key={index} className='white'>
-            <h3>
-              <a href={article.link} target="_blank" rel="noopener noreferrer">
-                {article.title}
-              </a>
-            </h3>
-          </div>
-        ))
-      )}
-      <div className='helmets'>
-        <br />
+    <div>
+    <div className='sportjoiner'>
+      <div className="image-containernfl"><br />
+        <img className='imgnfl' src="helmet\nfl.png" alt="NFL"     />
         <br />
         <br />
         <a href="https://www.ninersnation.com" target="_blank" rel="noreferrer">
@@ -130,6 +117,26 @@ const NFL = () => {
                <img src='/helmet/stealer.png' alt='pitsburgh'></img>
       
       </div>
+      
+    <div className='football'>
+    
+      {error ? (
+        <h3>{error}</h3>
+      ) : (
+        articles.map((article, index) => (
+          <div key={index} className='white'>
+            <h3>
+              <a href={article.link} target="_blank" rel="noopener noreferrer">
+                {article.title}
+              </a>
+            </h3>
+          </div>
+          
+        ))
+      )}
+      </div>
+      
+    </div>
     </div>
   );
 };

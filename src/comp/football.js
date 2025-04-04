@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css';
 import './buttons.css';
+import NFl from'./nfl.js'
 
 const Football = () => {
   const s3Url = process.env.REACT_APP_FOOTBALL_DATA_URL;
@@ -62,11 +63,12 @@ const Football = () => {
                 <div key={index} className="article" style={{ margin: '20px 0', border: '1px solid #ccc', padding: '10px' }}>
                   <h2>{item.title}</h2>
                   <p>
-                    {expandedIndexes[index] ? item.content : item.content.substring(0, 100) + '...'}
+                      {expandedIndexes[index] ? item.content : item.content.substring(0, 100) + '...'}
                     <button className='toggleReadMore' onClick={() => toggleReadMore(index)}>
                       {expandedIndexes[index] ? 'Read less' : 'Read more'}
                     </button>
                   </p>
+                  <NFL />
                 </div>
               ))}
             </div>
@@ -74,6 +76,7 @@ const Football = () => {
         )
       )}
     </div>
+   
   );
 };
 

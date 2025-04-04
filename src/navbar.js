@@ -53,7 +53,7 @@ const Navbar = () => {
                   opacity: buttonStates.buttonJobData ? 1 : 0.3,
                 }}
               />
-              Jobs
+              Local Stuff
             </button>
           </NavLink>
           <NavLink to="/articles" className={({ isActive }) => (isActive ? 'active' : '')}>
@@ -68,7 +68,7 @@ const Navbar = () => {
                   opacity: buttonStates.buttonLocalNews ? 1 : 0.3,
                 }}
               />
-              Articles
+              cks
             </button>
           </NavLink>
           <NavLink to="/nfl" className={({ isActive }) => (isActive ? 'active' : '')}>

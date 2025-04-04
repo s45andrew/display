@@ -45,12 +45,29 @@ body {
   .white{background:white;  font-size:17px; color:black; border-radius: 6px;margin:7px; }
   .white:hover{background:rgb(214, 209, 209);  color:black; border-radius: 6px; }
   
-  .football {
-    margin-top: 10px;  margin-left: 5px; /* Add margin to the top of the container to reduce the top gap */
+
+  .sportjoiner {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Space between elements */
+    justify-content: space-between; /* Adjust spacing between children */
+    padding: 10px; /* Optional for inner spacing */
   }
   
+  
+  .image-containernfl {
+    flex: 1; /* Adjust width if needed */
+  }
+  
+  .football {
+    flex: 2; /* Makes this div flexible to fill remaining space */
+  }
   h1, h3 {
     padding-left:5px;
     margin: 10px 0;  /* Add margin to headings */
+  }
+  .imgnfl{
+    width: 200px;
+    height: 200px;  object-fit: contain; /* Ensures the image fits nicely within its container */
   }
   

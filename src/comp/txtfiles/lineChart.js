@@ -67,7 +67,7 @@ const LineChart = () => {
       // Initialize with default range
       setTempX(newLabels.slice(-defaultSpread));
       setTempPoints(newData.slice(-defaultSpread));
-      setActiveButton(20);
+      setActiveButton(20);analysis(1);
     }
   }, [loadedData, currentDataset]);
 
@@ -260,7 +260,7 @@ const monthDifference = dataPoints.length > 20
    ) : ( // Display another div when stock picker is hidden
     <div className="another-div">
      
-      <div className="button-container"> <h3>The stock picker is now hidden!</h3>
+      <div className="button-container">   <h3>{stName}  {currencySymbol} {price} . . </h3>
     
 
         <button className={`sroun-button ${activeButton === 20 ? 'active' : ''}`} onClick={() => {duration(20);analysis(1);}}>1</button>
@@ -268,17 +268,18 @@ const monthDifference = dataPoints.length > 20
         <button className={`sroun-button ${activeButton === 125 ? 'active' : ''}`} onClick={() => {duration(125);analysis(6);}}>6</button>
         <button className={`sroun-button ${activeButton === 250 ? 'active' : ''}`} onClick={() => {duration(250);analysis(12);}}>12</button>
       </div>  
-      <p>      <h4>{stName}  {currencySymbol} {price} the average price {currencySymbol} {average.toFixed(2)} over {month}</h4>
+      <p>   
+      <h4>{stName}  {currencySymbol} {price} the average price {currencySymbol} {average.toFixed(2)} over {month}</h4>
        days below average {below} and over {above} days</p>
-      <p>Welcome to the alternate view!</p> <button className="returnbutton" onClick={hidestock}>
+      <p>Welcome to the alternate view!<button className="returnbutton" onClick={hidestock}>
         RETURN
-      </button>
+      </button></p> 
+      
     </div>
   )}
 
      
-      <h3>{stName}  {currencySymbol} {price} . . </h3>
-      <div className='chartspliter'>
+     <div className='chartspliter'>
       <div className='left-column'>
   <div>
     <h4 className='shadow'>day:</h4>
@@ -306,7 +307,7 @@ const monthDifference = dataPoints.length > 20
         <button className={`roun-button ${activeButton === 2 ? 'active' : ''}`} onClick={() => duration(2)}>day</button>
         <button className={`roun-button ${activeButton === 5 ? 'active' : ''}`} onClick={() => duration(5)}>week</button>
         <button className={`roun-button ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
-        <button className={`roun-button ${activeButton === 250 ? 'active' : ''}`} onClick={() => duration(250)}>year</button>
+        <button className={`roun-button ${activeButton === 250 ? 'active' : ''}`} onClick={() => {duration(250);analysis(12)}}>year</button>
         <button className={`roun-button ${activeButton === 1000 ? 'active' : ''}`} onClick={() => duration(1000)}>Max</button>
       </div>  
     </div>
