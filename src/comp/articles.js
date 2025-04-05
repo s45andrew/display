@@ -125,7 +125,7 @@ const S3DataFetcher = () => {
         <p>No articles available.</p>
       )}
     </div>
-    <div >
+    <div style={{ width: "120%" }}>
      <JobList />
     </div>
   </div>

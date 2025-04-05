@@ -68,6 +68,7 @@ const NFL = () => {
         <img className='imgnfl' src="helmet\nfl.png" alt="NFL"     />
         <br />
         <br />
+      
         <a href="https://www.ninersnation.com" target="_blank" rel="noreferrer">
           <img src='/helmet/49er.png' alt='49ers'></img>
         </a>

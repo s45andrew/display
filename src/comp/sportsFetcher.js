@@ -10,9 +10,13 @@ const SportsFetcher = () => {
   const [error, setError] = useState('');
   const [expandedIndexes, setExpandedIndexes] = useState({});
   const nflRef = useRef(null); // Create a ref for the NFL component
+  const nflfootball = useRef(null); // Create a ref for the NFL component
 
   const scrollToNFL = () => {
     nflRef.current?.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the NFL component
+  };
+  const scrollToFootball = () => {
+    nflfootball.current?.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the NFL component
   };
 
   useEffect(() => {
@@ -59,7 +63,7 @@ const SportsFetcher = () => {
   }
 
   return (
-    <div className="football-listings" style={{ padding: '20px' }}>
+    <div ref={nflfootball} className="football-listings" style={{ padding: '20px' }}>
       <div className="joiner">
         <div>
           <span>
@@ -133,7 +137,9 @@ const SportsFetcher = () => {
         <p>No articles available.</p>
       )}
       <div ref={nflRef}>
-        <NFL />
+      <button className="img-button" onClick={scrollToFootball}>
+              <img className="imgufl" src="helmet/ball.png" alt="return to football" />
+            </button><NFL />
       </div>
     </div>
   );
