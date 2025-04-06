@@ -1,6 +1,6 @@
 body {
     margin: 20px;  /* Add margin to the body to move content away from the edge */
-    padding: 0;
+    padding: 30px;
     font-family: Arial, sans-serif;
   }
   a {
@@ -48,10 +48,10 @@ body {
 
   .sportjoiner {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start;margin-top:20px;padding-top:30px;
     gap: 20px; /* Space between elements */
     justify-content: space-between; /* Adjust spacing between children */
-    padding: 10px; /* Optional for inner spacing */
+     /* Optional for inner spacing */
   }
   
   

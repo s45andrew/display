@@ -259,7 +259,7 @@ const monthDifference = dataPoints.length > 20
   </div>
    ) : ( // Display another div when stock picker is hidden
     <div className="another-div">
-     
+    
       <div className="button-container">   <h3>{stName}  {currencySymbol} {price} . . </h3>
     
 
@@ -280,8 +280,10 @@ const monthDifference = dataPoints.length > 20
 
      
      <div className='chartspliter'>
+     <br />
       <div className='left-column'>
   <div>
+  <br />
     <h4 className='shadow'>day:</h4>
     <span style={dayStyle}>{currencySymbol} {dayDifference}</span>
   </div>
@@ -300,6 +302,7 @@ const monthDifference = dataPoints.length > 20
 </div>
   
     <div className='right-column'>
+    <br />
         <div className="chart-container">
             <Line data={chartData} options={chartOptions} />
         </div>
@@ -309,7 +312,8 @@ const monthDifference = dataPoints.length > 20
         <button className={`roun-button ${activeButton === 20 ? 'active' : ''}`} onClick={() => duration(20)}>month</button>
         <button className={`roun-button ${activeButton === 250 ? 'active' : ''}`} onClick={() => {duration(250);analysis(12)}}>year</button>
         <button className={`roun-button ${activeButton === 1000 ? 'active' : ''}`} onClick={() => duration(1000)}>Max</button>
-      </div>  
+      </div> 
+      <br /> 
     </div>
 </div>
 

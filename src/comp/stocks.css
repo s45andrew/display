@@ -1,15 +1,15 @@
 .stocks{
     
-    background-color: rgb(70, 69, 69);
-     padding-left:5px;margin:2px;
+    background-color: rgb(20, 20, 20);
+     padding-left:5px;margin:2px;margin-top:25px;
   }
   .h1-hidden {
     position: absolute;
     left: -9999px; /* Hides the element off-screen */
   }
 .titles{
-  color:rgb(58, 56, 56);
-  padding-left: 8px;
+  color:rgb(226, 218, 218);
+  padding-left: 8px;padding-top:0px;padding-bottom:0px;
 }
   
   .flex-container {
@@ -17,14 +17,14 @@
 }
 .flex-child {
     flex: 1;
-    border: 0px solid rgb(42, 42, 42);
+    
    color :rgb(29, 28, 28);
 }  
 .flex-child:first-child {
   flex: 3;
    height :410px;
     margin-right: 0px;
-    border: 2px solid rgb(38, 38, 37);
+    border: 2px transparent;
     padding-right: 3px;
     color :rgb(210, 208, 208);
     background-color: rgb(26, 25, 25);
@@ -36,8 +36,8 @@
   border-radius: 5px; border-color: rgb(215, 198, 198);
   background-color: rgb(26, 25, 25);
     color :rgb(242, 241, 229);
-  padding-left: 12px;
-  margin-left: 5px;
+  padding-left: 2px;
+  margin-left: 1px;
 }
 .chart-container {
   height: 200px; /* Adjust this value to make the chart shorter or taller */

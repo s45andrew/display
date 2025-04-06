@@ -1,7 +1,7 @@
 /* App.css */
 body, html, #root {
   height: 100%;
-  margin: 0;
+  margin: 0;padding:0px;
  
 }
 .together {
@@ -20,9 +20,9 @@ body, html, #root {
    /* Consistent spacing between elements */
   width: 10%;
   height: 600px; /* Adapts to the content height without collapsing */
-  justify-content: center; /* Centers the child content */
+   /* Centers the child content */
   align-items: flex-start; /* Aligns items to the top */
-  padding: 2px;
+  padding: 0px;
 }
 
 
@@ -60,8 +60,7 @@ body, html, #root {
 
 .main-content {
   flex: 1 1 auto;
-  margin-left: 1px;
-  padding-left: 1px;
+ 
   
    /* Allows scrolling only inside the chart area */
   
@@ -104,14 +103,19 @@ body, html, #root {
   
   color: gold;
   font-size: 17px;}
+  
 .theGraph{
   padding: 3px;
-  background-color: #090a0b;border: 2px;border-color: antiquewhite;
+  padding-right:1px;
+  margin-top:5px;padding-top:5px;
+  background-color: #090a0b; 
   color :rgb(188, 182, 182);  overflow: hidden; /* Allows scrolling only inside the chart area */
-  
-
+ 
+ 
 }
-.teslsa{width:800px;  overflow: hidden; /* Allows scrolling only inside the chart area */
+.teslsa{width:7500px;
+    overflow: hidden; /* Allows scrolling only inside the chart area */
+   
   
 
 }
@@ -120,7 +124,7 @@ body, html, #root {
   width: 12px; /* Width of the scrollbar */
 }
 
-{/* ::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: #e42e2e;
 }
 
@@ -133,5 +137,5 @@ body, html, #root {
 ::-webkit-scrollbar-thumb:hover {
   background: #6363de;  Color when hovered 
 }
-*/}
+*/
 
